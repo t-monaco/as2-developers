@@ -1,0 +1,62 @@
+.property-container{
+    margin-bottom: 20px;
+    
+    .property {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 450px;
+        padding-bottom: 10px;
+        transition: all 0.4s ease-in;
+    
+        img {
+            height: 350px;
+            object-position: center;
+            object-fit: cover;
+            width: 100%;
+        }
+    
+        .divider {
+            background-color: rgb(104, 104, 104);
+            border-radius: 10px;
+            width: 40px;
+            height: 3px;
+        }
+    
+        .property-info{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+    
+            .name {
+                font-size: 1.2rem;
+                font-weight: 800;
+            }
+    
+            .category {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #6e6e6e;
+            }
+        }
+        
+        &:hover {
+            background-color: #000;
+    
+            img {
+                opacity: 0.7;
+            }
+    
+            .divider{
+                background-color: #fff;
+            }
+    
+            .name,
+            .category {
+                color: #fff;
+            }
+        }
+    }
+}
