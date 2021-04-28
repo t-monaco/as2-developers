@@ -7,8 +7,10 @@ const Properties = () => {
         <div className='properties'>
             <h2 className='title'>NUESTROS<br />TOUCH'S</h2>
             <ul className='properties-container'>
+                <Property name='BILBAO' category='FINALIZADO'></Property>
                 <Property name='SUCRE' category='FINALIZADO'></Property>
-                <Property name='RAMSAY' category='FINALIZADO'></Property>
+                <Property name='SUPERI' category='EN CONSTTRUCCION'></Property>
+                <Property name='LIB 5851' category='FUTUROS LANZAMIENTOS'></Property>
             </ul>
         </div>
     )

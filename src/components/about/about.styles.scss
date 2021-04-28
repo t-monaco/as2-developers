@@ -1,0 +1,41 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 14px;
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        span {
+            &:first-child {
+                font-weight: 400;
+                font-size: 16px;
+            }
+            &:last-child {
+                font-weight: 700;
+                font-size: 18px;
+            }
+        }
+
+        margin-bottom: 20px;
+    }
+
+    .description {
+        text-align: center;
+
+        p {
+            margin: 10px 0;
+        }
+
+        img {
+            height: 170px;
+            margin: 40PX 0;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
