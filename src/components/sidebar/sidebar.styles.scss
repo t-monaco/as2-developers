@@ -1,0 +1,86 @@
+@import './../../variables';
+
+.sidebar {
+    background-color: wheat;
+    box-shadow: -5px 0px 10px -4px #aaa;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - #{$header-height});
+    right: 0;
+    top: $header-height;
+    position: absolute;
+    width: 80%;
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        &-item {
+            align-items: center;
+            display: flex;
+            padding: 12px 10px 4px;
+            font-size: 20px;
+            font-weight: 500;
+
+            &.submenu {
+                font-size: 16px;
+                padding-top: 0;
+                padding-left: 30px;
+            }
+
+            span {
+                height: 15px;
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    max-height: 100%;
+                    height: 100%;
+                }
+
+                &.icon-left {
+                    margin: 10px 0;
+                }
+
+                &.icon-right {
+                    margin: 0;
+                    margin-left: 7px;
+                }
+            }
+        }
+    }
+
+    /* CSSTransition classes  */
+    .menu-primary-enter {
+        position: absolute;
+        transform: translateX(-110%);
+    }
+    .menu-primary-enter-active {
+        transform: translateX(0%);
+        transition: transform 0.2s ease;
+    }
+    .menu-primary-exit {
+        position: absolute;
+    }
+    .menu-primary-exit-active {
+        display: none;
+        transition: transform 0.2s ease;
+    }
+
+    .menu-secondary-enter {
+        transform: translateX(110%);
+    }
+    .menu-secondary-enter-active {
+        transform: translateX(0%);
+        transition: transform 0.2s ease;
+    }
+    .menu-secondary-exit {
+    }
+    .menu-secondary-exit-active {
+        transform: translateX(110%);
+        transition: transform 0.2s ease;
+    }
+}

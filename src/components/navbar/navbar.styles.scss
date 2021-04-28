@@ -1,0 +1,39 @@
+@import './../../_variables.scss';
+
+.navbar {
+    align-items: center;
+    background-color: salmon;
+    display: flex;
+    height: $header-height;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+    width: 100vw;
+    z-index: 99;
+
+    .logo {
+        height: 100%;
+    }
+
+    .header__sideMenu {
+        background-color: wheat;
+        right: -100%;
+        position: absolute;
+        top: $header-height;
+        height: calc(100vh - #{$header-height});
+        transition: all 0.3s;
+        width: 80%;
+        box-shadow: -5px 0px 10px -4px #aaa;
+
+        &.show {
+            right: 0;
+            overflow: visible;
+        }
+
+        .header__sideMenuOptions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+}

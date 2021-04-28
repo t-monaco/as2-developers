@@ -1,0 +1,42 @@
+$spanHeight: 5px;
+
+.nav-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    
+    .button-stick {
+        transition: all 0.3s;
+        display: block;
+        width: 30px;
+        height: $spanHeight;
+        background-color: #000;
+        position: relative;
+        border-radius: 8px;
+        
+        &.--middle {
+            margin: 3px 0;
+        }
+        
+        &.rotate {
+        }
+    }
+}
+
+.open {
+    .button-stick {
+        &.--top {
+            transform: rotate(45deg) translateY(0);
+        }
+
+        &.--middle {
+            display: none;
+            transition: none;
+        }
+
+        &.--bottom {
+            transform: rotate(-45deg) translateY(0);
+            bottom: $spanHeight;
+        }
+    }
+}
