@@ -10,6 +10,8 @@
     top: $header-height;
     position: absolute;
     width: 80%;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(110%);
 
     .menu {
         display: flex;
@@ -82,5 +84,12 @@
     .menu-secondary-exit-active {
         transform: translateX(110%);
         transition: transform 0.2s ease;
+    }
+}
+
+.open {
+    .sidebar {
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0);
     }
 }

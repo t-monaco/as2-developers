@@ -6,7 +6,7 @@ $spanHeight: 5px;
     cursor: pointer;
     
     .button-stick {
-        transition: all 0.3s;
+        transition: all 0.4s ease-in-out;
         display: block;
         width: 30px;
         height: $spanHeight;
@@ -16,9 +16,6 @@ $spanHeight: 5px;
         
         &.--middle {
             margin: 3px 0;
-        }
-        
-        &.rotate {
         }
     }
 }
@@ -31,7 +28,7 @@ $spanHeight: 5px;
 
         &.--middle {
             display: none;
-            transition: none;
+            // transition: none;
         }
 
         &.--bottom {

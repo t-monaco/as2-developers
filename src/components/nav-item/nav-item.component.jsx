@@ -20,7 +20,7 @@ const NavItem = ({children, hideMobile, title, to}) => {
             >
                 {title}
             </Link>
-            {open && childrenWithProps}
+            {childrenWithProps}
         </li>
     );
 }
