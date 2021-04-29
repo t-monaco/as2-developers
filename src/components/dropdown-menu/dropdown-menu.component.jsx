@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CSSTransition } from 'react-transition-group';
 import './dropdown-menu.styles.scss';
@@ -7,6 +7,17 @@ import { ReactComponent as RightArrow } from './../../assets/right-arrow.svg';
 
 const DropdownMenu = () => {
     const [activeMenu, setActiveMenu] = useState('main');
+    const [menuHeight, setMenuHeight] = useState(null);
+    const dropdownRef = useRef(null);
+
+    useEffect(() => {
+        setMenuHeight(dropdownRef.current?.firstChild.offsetHeight);
+    }, []);
+
+    function calcHeight(el) {
+        const height = el.offsetHeight;
+        setMenuHeight(height);
+    }
 
     const DropdownItem = ({
         children,
@@ -30,37 +41,32 @@ const DropdownMenu = () => {
     };
 
     return (
-        <div className='dropdown'>
-            {/* <CSSTransition
-                in={activeMenu === 'main'}
-                timeout={500}
-                classNames='menu-primary'
-                unmountOnExit
-            >
-                <div className='menu'>
-                    <DropdownItem to='/'>HOME</DropdownItem>
-                    <DropdownItem rightIcon={<RightArrow />} goToMenu='settings'>
-                        DASARROLLOS
-                    </DropdownItem>
-                    <DropdownItem>NOSOTROS</DropdownItem>
-                    <DropdownItem>CONTACTO</DropdownItem>
-                </div>
-            </CSSTransition> */}
-
+        <div
+            className='dropdown'
+            style={{ height: menuHeight }}
+            ref={dropdownRef}
+        >
             <CSSTransition
                 in={activeMenu === 'main'}
                 timeout={500}
                 classNames='menu-primary'
                 unmountOnExit
+                onEnter={calcHeight}
             >
                 <div className='menu'>
-                    <DropdownItem goToMenu='finalizados'>
+                    <DropdownItem
+                        goToMenu='finalizados'
+                        rightIcon={<RightArrow />}
+                    >
                         FINALIZADOS
                     </DropdownItem>
-                    <DropdownItem goToMenu='construccion'>
+                    <DropdownItem
+                        goToMenu='construccion'
+                        rightIcon={<RightArrow />}
+                    >
                         EN CONSTRUCCION
                     </DropdownItem>
-                    <DropdownItem goToMenu='futuros'>
+                    <DropdownItem goToMenu='futuros' rightIcon={<RightArrow />}>
                         FUTUROS LANZAMIENTOS
                     </DropdownItem>
                 </div>
@@ -85,6 +91,7 @@ const DropdownMenu = () => {
                 timeout={500}
                 classNames='menu-secondary'
                 unmountOnExit
+                onEnter={calcHeight}
             >
                 <div className='menu'>
                     <DropdownItem goToMenu='main' leftIcon={<LeftArrow />}>
@@ -99,6 +106,7 @@ const DropdownMenu = () => {
                 className='menu-secondary'
                 classNames='menu-secondary'
                 unmountOnExit
+                onEnter={calcHeight}
             >
                 <div className='menu'>
                     <DropdownItem goToMenu='main' leftIcon={<LeftArrow />}>

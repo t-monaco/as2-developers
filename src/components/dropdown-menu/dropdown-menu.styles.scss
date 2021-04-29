@@ -8,27 +8,8 @@
         top: 45px;
         left: 0;
         width: 240px;
-        padding: 0.5rem;
         overflow: hidden;
         transition: height 0.2s ease;
-
-        // &.nav-item-transition {
-        //     &-enter {
-        //         transform: translateX(110%);
-        //         transition: transform 0.3s ease-in-out;
-        //         &-active {
-        //             transition: transform 0.3s ease-in-out;
-        //             transform: translateX(0);
-        //         }
-        //     }
-
-        //     &-exit {
-        //         &-active {
-        //             transform: translateX(110%);
-        //             transition: transform 0.3s ease-in-out;
-        //         }
-        //     }
-        // }
     }
 
     .menu {
@@ -38,8 +19,6 @@
             height: 50px;
             display: flex;
             align-items: center;
-            border-radius: var(--border-radius);
-            transition: background var(--speed);
             padding: 0.5rem;
             font-size: 0.9rem;
             height: auto;
@@ -47,36 +26,69 @@
             overflow-x: visible;
 
             &:hover {
-                background-color: hsla(0, 0%, 100%, 0.70);
+                background-color: hsla(0, 0%, 100%, 0.7);
             }
 
             span {
                 position: absolute;
-                left: -15px;
                 height: 14px;
-
+                
                 svg {
                     max-height: 100%;
                     height: 100%;
                     fill: #000;
                 }
-
+                
                 &.icon-left {
-                    // margin-right: -20px;
+                    left: 10px;
                 }
 
                 &.icon-right {
-                    margin: 0;
-                    margin-left: 7px;
+                    right: 14px;
+                }
+            }
+        }
+
+        &-primary {
+            &-enter {
+                position: absolute;
+                transform: translateX(-110%);
+
+                &-active {
+                    transform: translateX(0%);
+                    transition: all 0.2s ease;
+                }
+            }
+
+            &-exit {
+                position: absolute;
+
+                &-active {
+                    transform: translateX(-110%);
+                    transition: all 0.2s ease;
                 }
             }
         }
 
         &-secondary {
             &-enter {
+                transform: translateX(110%);
+
                 &-active,
                 &-done {
-                    padding-left: 20px;
+                    transform: translateX(0%);
+                    transition: all 0.2s ease;
+
+                    > * {
+                        padding-left: 30px;
+                    }
+                }
+            }
+
+            &-exit {
+                &-active {
+                    transform: translateX(110%);
+                    transition: all 0.2s ease;
                 }
             }
         }
