@@ -1,3 +1,4 @@
+@import './../../variables';
 .card-navigation {
     align-items: center;
     display: flex;
@@ -12,5 +13,19 @@
 
     .card-container {
         width: 100%;
+    }
+
+    @media screen and (min-width: $breakpoint-mobile) {
+        padding: 0;
+
+        .title {
+            font-size: 1.8rem;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
     }
 }

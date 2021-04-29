@@ -2,7 +2,7 @@ import React from 'react';
 import {
     BrowserRouter as Router,
     Route,
-    Redirect,
+    // Redirect,
     Switch,
 } from 'react-router-dom';
 import Navbar from './components/navbar/navbar.component';
@@ -14,7 +14,7 @@ const App = () => {
             <div id='page-container'>
                 <Navbar />
                 <Switch>
-                    <Route exact path='/' component={Homepage}></Route>
+                    <Route path='/' component={Homepage}></Route>
                 </Switch>
             </div>
         </Router>

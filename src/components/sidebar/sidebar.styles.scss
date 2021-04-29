@@ -1,8 +1,9 @@
 @import './../../variables';
 
 .sidebar {
-    background-color: wheat;
-    box-shadow: -5px 0px 10px -4px #aaa;
+    background-color: hsla(0, 0%, 16%, 0.95);
+    box-shadow: -5px 0px 10px -4px #000;
+    color: #fff;
     display: flex;
     flex-direction: column;
     height: calc(100vh - #{$header-height});
@@ -10,8 +11,8 @@
     top: $header-height;
     position: absolute;
     width: 80%;
-    transition: transform 0.3s ease-in-out;
     transform: translateX(110%);
+    transition: transform 0.3s ease-in-out;
 
     .menu {
         display: flex;
@@ -41,6 +42,7 @@
                     left: 0;
                     max-height: 100%;
                     height: 100%;
+                    fill: #fff;
                 }
 
                 &.icon-left {

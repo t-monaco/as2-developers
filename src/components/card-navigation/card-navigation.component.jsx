@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from '../section-title/section-title.component';
 import CardItem from './../card-item/card-item.component';
 
 import './card-navigation.styles.scss';
@@ -8,7 +9,8 @@ const CardNavigation = () => {
 
     return (
         <div className='card-navigation'>
-            <h2 className='title'>DESARROLLOS</h2>
+            <SectionTitle type='h2' bottomText='DESARROLLOS' />
+            {/* <h2 className='title'>DESARROLLOS</h2> */}
             <ul className='card-container'>
                 <CardItem name='FINALIZADOS' items={items}></CardItem>
                 <CardItem name='EN CONSTRUCCION' items={items}></CardItem>

@@ -1,3 +1,5 @@
+@import './../../variables';
+
 .property-container{
     margin-bottom: 20px;
     
@@ -58,5 +60,9 @@
                 color: #fff;
             }
         }
+    }
+
+    @media screen and (min-width: $breakpoint-mobile) {
+        margin: 0;
     }
 }

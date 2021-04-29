@@ -1,3 +1,5 @@
+@import './../../variables';
+
 .properties {
     display: flex;
     flex-direction: column;
@@ -6,12 +8,23 @@
     border-bottom: 1px solid #aaa;
     width: 100%;
 
-.title {
-    margin: 50px 0;
-    text-align: center;
-}
+    .title {
+        margin: 50px 0;
+        text-align: center;
+    }
 
-    &-container {
+    .properties-container {
         width: 100%;
+    }
+
+    @media screen and (min-width: $breakpoint-mobile) {
+        border-top: unset;
+        padding: 0;
+
+        .properties-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
     }
 }

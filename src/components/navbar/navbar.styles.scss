@@ -2,38 +2,29 @@
 
 .navbar {
     align-items: center;
-    background-color: salmon;
+    background-color: hsla(0, 0%, 100%, 0.63);
     display: flex;
     height: $header-height;
     justify-content: space-between;
     padding: 10px 20px;
-    position: relative;
+    position: fixed;
     width: 100vw;
     z-index: 99;
 
-    .logo {
-        height: 100%;
+    &.scroll {
+        background-color: #eee;
     }
 
-    .header__sideMenu {
-        background-color: wheat;
-        right: -100%;
-        position: absolute;
-        top: $header-height;
-        height: calc(100vh - #{$header-height});
-        transition: all 0.3s;
-        width: 80%;
-        box-shadow: -5px 0px 10px -4px #aaa;
-
-        &.show {
-            right: 0;
-            overflow: visible;
+    .logo {
+        height: 100%;
+        svg {
+            height: 100%;
         }
+    }
 
-        .header__sideMenuOptions {
+    @media screen and (min-width: $breakpoint-mobile) {
+        .navbar-nav {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
         }
     }
 }
