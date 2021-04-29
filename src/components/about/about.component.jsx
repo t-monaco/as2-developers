@@ -1,13 +1,11 @@
 import React from 'react';
+import SectionTitle from '../section-title/section-title.component';
 import './about.styles.scss';
 
-const About = () => {
+const About = () => {    
     return (
-        <div className='about'>
-            <h2 className='title'>
-                <span>SOBRE</span>
-                <span>NOSOTROS</span>
-            </h2>
+        <div className='about' id='nosotros'>
+            <SectionTitle type='h2' topText='SOBRE' bottomText='NOSOTROS' />
             <article className='description'>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.

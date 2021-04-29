@@ -1,26 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import SectionTitle from '../section-title/section-title.component';
 import './contact.styles.scss';
 
 const Contact = () => {
     return (
-        <div className='contact'>
-            <h2 className='title'>
-                <span>MAS INFO</span>
-                <span>CONTACTANOS</span>
-            </h2>
+        <div className='contact' id='contacto'>
+            <SectionTitle type='h2' topText='MAS INFO' bottomText='CONTACTANOS' />
             <div className='contaxt-info'>
                 <ul>
                     <li className='phone'>
                         <h4>TELÉFONO</h4>
-                        <a>(+54) 9 11 6009 5550</a>
+                        <Link>(+54) 9 11 6009 5550</Link>
                     </li>
                     <li className='email'>
                         <h4>EMAIL</h4>
-                        <a>as@as2developers.com</a>
+                        <Link>AS@AS2DEVELOPERS.COM</Link>
                     </li>
                     <li className='address'>
                         <h4>DIRECCIÓN</h4>
-                        <a>DEHEZA 1671</a>
+                        <Link>DEHEZA 1671</Link>
                     </li>
                 </ul>
             </div>
