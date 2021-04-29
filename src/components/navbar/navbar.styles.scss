@@ -22,9 +22,26 @@
         }
     }
 
+    .navbar-nav {
+        > * {
+            display: none;
+
+            &:last-child {
+                display: block;
+            }
+        }
+    }
+
     @media screen and (min-width: $breakpoint-mobile) {
         .navbar-nav {
             display: flex;
+            > * {
+                display: flex;
+
+                &:last-child {
+                    display: none;
+                }
+            }
         }
     }
 }

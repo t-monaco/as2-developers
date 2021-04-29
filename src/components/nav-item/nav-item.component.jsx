@@ -1,29 +1,26 @@
 import React, { useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
+import { CSSTransition } from 'react-transition-group';
 import './nav-item.styles.scss';
 
-const NavItem = ({ children, desktop, mobile, title, to }) => {
+const NavItem = ({ children, title, to }) => {
     const [open, setOpen] = useState(false);
-
-    const childrenWithProps = React.Children.map(children, (child) => {
-        return React.cloneElement(child, {
-            open,
-        });
-    });
 
     return (
         <li className={`nav-item ${open ? 'open' : ''}`}>
-            <Link
-                className={`${desktop ? 'desktop' : ''} ${
-                    mobile ? 'mobile' : ''
-                }`}
-                to={to}
-                onClick={() => setOpen(!open)}
-                smooth
-            >
+            <Link onClick={() => setOpen(!open)} smooth to={to}>
                 {title}
             </Link>
-            {childrenWithProps}
+            {children && (
+                <CSSTransition
+                    in={open}
+                    timeout={500}
+                    classNames='nav-item-transition'
+                    unmountOnExit
+                >
+                    {children}
+                </CSSTransition>
+            )}
         </li>
     );
 };

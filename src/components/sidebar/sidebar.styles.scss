@@ -11,8 +11,24 @@
     top: $header-height;
     position: absolute;
     width: 80%;
-    transform: translateX(110%);
-    transition: transform 0.3s ease-in-out;
+    
+    &.nav-item-transition {
+        &-enter {
+            transform: translateX(110%);
+            transition: transform 0.3s ease-in-out;
+            &-active {
+                transition: transform 0.3s ease-in-out;
+                transform: translateX(0);
+            }
+        }
+        
+        &-exit {
+            &-active {
+                transform: translateX(110%);
+                transition: transform 0.3s ease-in-out;
+            }
+        }
+    }
 
     .menu {
         display: flex;
@@ -58,40 +74,42 @@
     }
 
     /* CSSTransition classes  */
-    .menu-primary-enter {
-        position: absolute;
-        transform: translateX(-110%);
-    }
-    .menu-primary-enter-active {
-        transform: translateX(0%);
-        transition: transform 0.2s ease;
-    }
-    .menu-primary-exit {
-        position: absolute;
-    }
-    .menu-primary-exit-active {
-        display: none;
-        transition: transform 0.2s ease;
+    .menu-primary {
+        &-enter {
+            position: absolute;
+            transform: translateX(-110%);
+            transition: transform 0.2s ease;
+
+            &-active {
+                transform: translateX(0%);
+                transition: transform 0.2s ease;
+            }
+        }
+
+        &-exit {
+            position: absolute;
+
+            &-active {
+                display: none;
+                transition: transform 0.2s ease;
+            }
+        }
     }
 
-    .menu-secondary-enter {
-        transform: translateX(110%);
-    }
-    .menu-secondary-enter-active {
-        transform: translateX(0%);
-        transition: transform 0.2s ease;
+    .menu-secondary {
+        &-enter {
+            transform: translateX(110%);
+
+            &-active {
+                transform: translateX(0%);
+                transition: transform 0.2s ease;
+            }
+        }
     }
     .menu-secondary-exit {
-    }
-    .menu-secondary-exit-active {
-        transform: translateX(110%);
-        transition: transform 0.2s ease;
-    }
-}
-
-.open {
-    .sidebar {
-        transition: transform 0.3s ease-in-out;
-        transform: translateX(0);
+        &-active {
+            transform: translateX(110%);
+            transition: transform 0.2s ease;
+        }
     }
 }
