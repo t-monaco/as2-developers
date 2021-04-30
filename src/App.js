@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import Navbar from './components/navbar/navbar.component';
 import Homepage from './pages/homepage/homepage.component';
+import Project from './pages/project/project.component';
 
 const App = () => {
     return (
@@ -14,7 +15,8 @@ const App = () => {
             <div id='page-container'>
                 <Navbar />
                 <Switch>
-                    <Route path='/' component={Homepage}></Route>
+                    <Route exact path='/' component={Homepage}></Route>
+                    <Route path='/:projectId' component={Project}></Route>
                 </Switch>
             </div>
         </Router>
