@@ -11,7 +11,7 @@
     top: $header-height;
     position: absolute;
     width: 80%;
-    
+
     &.nav-item-transition {
         &-enter {
             transform: translateX(110%);
@@ -21,7 +21,7 @@
                 transform: translateX(0);
             }
         }
-        
+
         &-exit {
             &-active {
                 transform: translateX(110%);
@@ -36,11 +36,14 @@
         padding: 10px;
 
         &-item {
-            align-items: center;
+            height: 50px;
             display: flex;
-            padding: 12px 10px 4px;
-            font-size: 20px;
-            font-weight: 500;
+            align-items: center;
+            padding: 0.5rem;
+            font-size: 1rem;
+            height: auto;
+            position: relative;
+            overflow-x: visible;
 
             &.submenu {
                 font-size: 16px;
@@ -71,45 +74,89 @@
                 }
             }
         }
+
+        &-secondary {
+            &-enter {
+                position: absolute;
+                transform: translateX(-110%);
+
+                &-active {
+                    transform: translateX(0%);
+                    transition: all 0.2s ease;
+                }
+            }
+
+            &-exit {
+                position: absolute;
+
+                &-active {
+                    transform: translateX(-110%);
+                    transition: all 0.2s ease;
+                }
+            }
+        }
+
+        &-secondary {
+            &-enter {
+                transform: translateX(110%);
+
+                &-active,
+                &-done {
+                    transform: translateX(0%);
+                    transition: all 0.2s ease;
+
+                    > * {
+                        padding-left: 30px;
+                    }
+                }
+            }
+
+            &-exit {
+                &-active {
+                    transform: translateX(110%);
+                    transition: all 0.2s ease;
+                }
+            }
+        }
     }
 
     /* CSSTransition classes  */
-    .menu-primary {
-        &-enter {
-            position: absolute;
-            transform: translateX(-110%);
-            transition: transform 0.2s ease;
+    // .menu-primary {
+    //     &-enter {
+    //         position: absolute;
+    //         transform: translateX(-110%);
+    //         transition: transform 0.2s ease;
 
-            &-active {
-                transform: translateX(0%);
-                transition: transform 0.2s ease;
-            }
-        }
+    //         &-active {
+    //             transform: translateX(0%);
+    //             transition: transform 0.2s ease;
+    //         }
+    //     }
 
-        &-exit {
-            position: absolute;
+    //     &-exit {
+    //         position: absolute;
 
-            &-active {
-                display: none;
-                transition: transform 0.2s ease;
-            }
-        }
-    }
+    //         &-active {
+    //             display: none;
+    //             transition: transform 0.2s ease;
+    //         }
+    //     }
+    // }
 
-    .menu-secondary {
-        &-enter {
-            transform: translateX(110%);
+    // .menu-secondary {
+    //     &-enter {
+    //         transform: translateX(110%);
 
-            &-active {
-                transform: translateX(0%);
-                transition: transform 0.2s ease;
-            }
-        }
-    }
-    .menu-secondary-exit {
-        &-active {
-            transform: translateX(110%);
-            transition: transform 0.2s ease;
-        }
-    }
+    //         &-active {
+    //             transform: translateX(0%);
+    //             transition: transform 0.2s ease;
+    //         }
+    //     }
+    // }
+    // .menu-secondary-exit {
+    //     &-active {
+    //         transform: translateX(110%);
+    //         transition: transform 0.2s ease;
+    //     }
+    // }
 }

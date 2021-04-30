@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './sidebar.styles.scss';
 import { CSSTransition } from 'react-transition-group';
-import { Link } from 'react-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import { ReactComponent as LeftArrow } from './../../assets/left-arrow.svg';
 import { ReactComponent as RightArrow } from './../../assets/right-arrow.svg';
+import MenuContext from '../../contexts/menu/menu.context';
 
 const Sidebar = () => {
     const [activeMenu, setActiveMenu] = useState('main');
+    const { toggleOpen } = useContext(MenuContext);
 
     const SidebarItem = ({
         children,
@@ -20,7 +22,7 @@ const Sidebar = () => {
             <Link
                 to={to}
                 className={`menu-item ${submenu ? 'submenu' : ''}`}
-                onClick={() => goToMenu && setActiveMenu(goToMenu)}
+                onClick={goToMenu ? () => setActiveMenu(goToMenu) : toggleOpen}
             >
                 {leftIcon && <span className='icon-left'>{leftIcon}</span>}
                 {children}
@@ -39,30 +41,86 @@ const Sidebar = () => {
             >
                 <div className='menu'>
                     <SidebarItem to='/'>HOME</SidebarItem>
-                    <SidebarItem rightIcon={<RightArrow />} goToMenu='settings'>
+                    <SidebarItem
+                        rightIcon={<RightArrow />}
+                        goToMenu='desarrollos'
+                    >
                         DASARROLLOS
                     </SidebarItem>
-                    <SidebarItem>NOSOTROS</SidebarItem>
+                    <SidebarItem to='/#nosotros'>NOSOTROS</SidebarItem>
                     <SidebarItem>CONTACTO</SidebarItem>
                 </div>
             </CSSTransition>
 
             <CSSTransition
-                in={activeMenu === 'settings'}
+                in={activeMenu === 'desarrollos'}
                 timeout={500}
                 classNames='menu-secondary'
                 unmountOnExit
             >
                 <div className='menu'>
-                    <SidebarItem goToMenu='main' leftIcon={<LeftArrow />} />
-                    <SidebarItem>FINALIZADOS</SidebarItem>
-                    <SidebarItem submenu>TOUCH #1</SidebarItem>
-                    <SidebarItem submenu>TOUCH #2</SidebarItem>
-                    <SidebarItem>EN CONSTRUCCION</SidebarItem>
-                    <SidebarItem submenu>SUPERI #1</SidebarItem>
-                    <SidebarItem>FUTUROS LANZAMIENTOS</SidebarItem>
-                    <SidebarItem submenu>RIO #1</SidebarItem>
-                    <SidebarItem submenu>GREEN #1</SidebarItem>
+                    <SidebarItem
+                        goToMenu='main'
+                        leftIcon={<LeftArrow />}
+                    >
+                        DESARROLLOS
+                    </SidebarItem>
+                    <SidebarItem
+                        goToMenu='finalizados'
+                        rightIcon={<RightArrow />}
+                    >
+                        FINALIZADOS
+                    </SidebarItem>
+                    <SidebarItem
+                        goToMenu='construccion'
+                        rightIcon={<RightArrow />}
+                    >
+                        EN CONSTRUCCION
+                    </SidebarItem>
+                    <SidebarItem goToMenu='futuros' rightIcon={<RightArrow />}>
+                        FUTUROS LANZAMIENTOS
+                    </SidebarItem>
+                </div>
+            </CSSTransition>
+            <CSSTransition
+                in={activeMenu === 'finalizados'}
+                timeout={500}
+                classNames='menu-secondary'
+                unmountOnExit
+            >
+                <div className='menu'>
+                    <SidebarItem goToMenu='desarrollos' leftIcon={<LeftArrow />}>
+                        FINALIZADOS
+                    </SidebarItem>
+                    <SidebarItem to='touch-01'>TOUCH #1</SidebarItem>
+                    <SidebarItem>TOUCH #2</SidebarItem>
+                </div>
+            </CSSTransition>
+            <CSSTransition
+                in={activeMenu === 'construccion'}
+                timeout={500}
+                classNames='menu-secondary'
+                unmountOnExit
+            >
+                <div className='menu'>
+                    <SidebarItem goToMenu='desarrollos' leftIcon={<LeftArrow />}>
+                        EN CONSTRUCCION
+                    </SidebarItem>
+                    <SidebarItem>SUPERI #1</SidebarItem>
+                </div>
+            </CSSTransition>
+            <CSSTransition
+                in={activeMenu === 'futuros'}
+                timeout={500}
+                classNames='menu-tertiary'
+                unmountOnExit
+            >
+                <div className='menu'>
+                    <SidebarItem goToMenu='desarrollos' leftIcon={<LeftArrow />}>
+                        FUTUROS LANZAMIENTOS
+                    </SidebarItem>
+                    <SidebarItem>RIO #1</SidebarItem>
+                    <SidebarItem>GREEN #1</SidebarItem>
                 </div>
             </CSSTransition>
         </div>

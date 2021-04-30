@@ -6,7 +6,7 @@ import './properties.styles.scss';
 const Properties = () => {
     return (
         <div className='properties'>
-            <SectionTitle type='h2' topText='NUESTROS' bottomText="TOUCH'S" />
+            <SectionTitle type='h2' secondaryTitle='NUESTROS' mainTitle="TOUCH'S" />
             <ul className='properties-container'>
                 <Property name='BILBAO' category='FINALIZADO'></Property>
                 <Property name='SUCRE' category='FINALIZADO'></Property>

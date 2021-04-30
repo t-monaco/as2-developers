@@ -7,9 +7,12 @@ import Sidebar from '../sidebar/sidebar.component';
 import NavButton from '../nav-button/nav-button.component';
 import { ReactComponent as Logo } from './../../assets/as2_developers--logo.svg';
 import DropdownMenu from '../dropdown-menu/dropdown-menu.component';
+import MenuContext from '../../contexts/menu/menu.context';
 
 const Navbar = () => {
     const [scrollTop, setScrollTop] = useState(true);
+    const [open, setOpen] = useState(false);
+    const toggleOpen = () => setOpen(!open);
 
     useEffect(() => {
         const onScroll = (e) => {
@@ -27,14 +30,28 @@ const Navbar = () => {
             </Link>
             <ul className='navbar-nav'>
                 <NavItem to='/#top' title='HOME' />
-                <NavItem to='/' title='DESARROLLOS'>
-                    <DropdownMenu />
-                </NavItem>
+                <MenuContext.Provider
+                    value={{
+                        open,
+                        toggleOpen,
+                    }}
+                >
+                    <NavItem title='DESARROLLOS'>
+                        <DropdownMenu />
+                    </NavItem>
+                </MenuContext.Provider>
                 <NavItem to={'/#nosotros'} title='NOSOTROS' />
                 <NavItem to='/#contacto' title='CONTACTO' />
-                <NavItem to='/' title={<NavButton />}>
-                    <Sidebar />
-                </NavItem>
+                <MenuContext.Provider
+                    value={{
+                        open,
+                        toggleOpen,
+                    }}
+                >
+                    <NavItem title={<NavButton />}>
+                        <DropdownMenu />
+                    </NavItem>
+                </MenuContext.Provider>
             </ul>
         </nav>
     );
