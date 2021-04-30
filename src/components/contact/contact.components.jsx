@@ -6,8 +6,8 @@ import './contact.styles.scss';
 const Contact = () => {
     return (
         <div className='contact' id='contacto'>
-            <SectionTitle type='h2' topText='MAS INFO' bottomText='CONTACTANOS' />
-            <div className='contaxt-info'>
+            <SectionTitle type='h2' secondaryTitle='MAS INFO' mainTitle='CONTACTANOS' />
+            <div className='contact-info'>
                 <ul>
                     <li className='phone'>
                         <h4>TELÉFONO</h4>

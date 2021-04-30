@@ -9,7 +9,7 @@ const CardNavigation = () => {
 
     return (
         <div className='card-navigation'>
-            <SectionTitle type='h2' bottomText='DESARROLLOS' />
+            <SectionTitle type='h2' mainTitle='DESARROLLOS' />
             {/* <h2 className='title'>DESARROLLOS</h2> */}
             <ul className='card-container'>
                 <CardItem name='FINALIZADOS' items={items}></CardItem>

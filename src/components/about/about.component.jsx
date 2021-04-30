@@ -5,7 +5,7 @@ import './about.styles.scss';
 const About = () => {    
     return (
         <div className='about' id='nosotros'>
-            <SectionTitle type='h2' topText='SOBRE' bottomText='NOSOTROS' />
+            <SectionTitle type='h2' secondaryTitle='SOBRE' mainTitle='NOSOTROS' />
             <article className='description'>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
