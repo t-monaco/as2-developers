@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import {
     Collapse,
     Navbar,
     NavbarToggler,
-    NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
     UncontrolledDropdown,
     DropdownToggle,
     DropdownMenu,
@@ -20,7 +19,6 @@ const NavbarRB = () => {
     const [scrollTop, setScrollTop] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
-
 
     useEffect(() => {
         const onScroll = (e) => {
@@ -38,14 +36,21 @@ const NavbarRB = () => {
                 light
                 className={`${!scrollTop ? 'scroll' : ''}`}
             >
-                <NavbarBrand href='/'>
+                <Link smooth to='/#top' class='navbar-brand'>
                     <Logo />
-                </NavbarBrand>
+                </Link>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='' navbar>
                         <NavItem>
-                            <NavLink href='/components/'>HOME</NavLink>
+                            <Link
+                                smooth
+                                to='/#top'
+                                class='nav-link'
+                                onClick={toggle}
+                            >
+                                HOME
+                            </Link>
                         </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
@@ -54,38 +59,76 @@ const NavbarRB = () => {
                             <DropdownMenu left>
                                 <DropdownItem divider />
                                 <DropdownItem header>FINALIZADOS</DropdownItem>
-                                <DropdownItem href='/touch01'>
+                                <Link
+                                    to='/touch01'
+                                    class='dropdown-item'
+                                    role='menuitem'
+                                    // onClick={toggle}
+                                >
                                     TOUCH 01
-                                </DropdownItem>
-                                <DropdownItem href='/touch01'>
+                                </Link>
+                                <Link
+                                    to='/touch01'
+                                    class='dropdown-item'
+                                    role='menuitem'
+                                    onClick={toggle}
+                                >
                                     TOUCH 02
-                                </DropdownItem>
+                                </Link>
                                 <DropdownItem divider />
                                 <DropdownItem header>
                                     EN CONSTRUCCION
                                 </DropdownItem>
-                                <DropdownItem href='/touch01'>
+                                <Link
+                                    to='/touch01'
+                                    class='dropdown-item'
+                                    role='menuitem'
+                                    onClick={toggle}
+                                >
                                     TOUCH 03
-                                </DropdownItem>
+                                </Link>
                                 <DropdownItem divider />
                                 <DropdownItem header>
                                     FUTUROS LAZAMIENTOS
                                 </DropdownItem>
-                                <DropdownItem href='/touch01'>
+                                <Link
+                                    to='/touch01'
+                                    class='dropdown-item'
+                                    role='menuitem'
+                                    onClick={toggle}
+                                >
                                     TOUCH 04
-                                </DropdownItem>
+                                </Link>
+                                <Link
+                                    to='/touch01'
+                                    class='dropdown-item'
+                                    role='menuitem'
+                                    onClick={toggle}
+                                >
+                                    TOUCH 05
+                                </Link>
                                 <DropdownItem divider />
                             </DropdownMenu>
                         </UncontrolledDropdown>
                         <NavItem>
-                            <NavLink onClick={toggle} href='/#nosotros'>
+                            <Link
+                                smooth
+                                to='/#nosotros'
+                                class='nav-link'
+                                onClick={toggle}
+                            >
                                 NOSOTROS
-                            </NavLink>
+                            </Link>
                         </NavItem>
                         <NavItem>
-                            <NavLink onClick={toggle} href='/#contacto'>
+                            <Link
+                                smooth
+                                to='/#contacto'
+                                class='nav-link'
+                                onClick={toggle}
+                            >
                                 CONTACTO
-                            </NavLink>
+                            </Link>
                         </NavItem>
                     </Nav>
                 </Collapse>
