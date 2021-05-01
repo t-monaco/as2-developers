@@ -16,7 +16,7 @@ import { ReactComponent as Logo } from './../../assets/as2_developers--logo.svg'
 
 import './navbar-rb.styles.scss';
 
-const NavbarRB = (props) => {
+const NavbarRB = () => {
     const [scrollTop, setScrollTop] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
