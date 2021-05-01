@@ -12,9 +12,11 @@ li {
     list-style: none;
 }
 
-a {
+a,
+a:hover {
     text-decoration: none;
     color: unset;
+
 }
 
 #page-container {

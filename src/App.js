@@ -5,7 +5,7 @@ import {
     // Redirect,
     Switch,
 } from 'react-router-dom';
-import Navbar from './components/navbar/navbar.component';
+import NavbarRB from './components/navbar/navbar-rb.component';
 import Homepage from './pages/homepage/homepage.component';
 import Project from './pages/project/project.component';
 
@@ -13,7 +13,7 @@ const App = () => {
     return (
         <Router>
             <div id='page-container'>
-                <Navbar />
+                <NavbarRB/>
                 <Switch>
                     <Route exact path='/' component={Homepage}></Route>
                     <Route path='/:projectId' component={Project}></Route>
