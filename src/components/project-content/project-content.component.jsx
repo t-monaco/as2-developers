@@ -3,7 +3,7 @@ import './project-content.styles.scss';
 import SectionTitle from '../section-title/section-title.component';
 import SlickSlider from '../slick-slider/slick-slider.component';
 
-const ProjectContent = () => {
+const ProjectContent = ({title}) => {
     const sliderSettings = {
         autoplay: true,
         arrows: true,
@@ -16,8 +16,15 @@ const ProjectContent = () => {
 
     return (
         <div className='project-content'>
-            <SectionTitle type='h2' mainTitle='RESIDENCIAS' />
-            <SlickSlider settings={sliderSettings}/>
+            <SectionTitle type='h2' mainTitle={title} />
+            <SlickSlider settings={sliderSettings} />
+            <p className='description'>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi,
+                consequatur totam? Neque est asperiores vero, nulla similique
+                nostrum non maxime. Labore consequuntur nobis sit molestiae
+                consectetur totam quo aperiam dolorum.
+            </p>
+            <div className="divider"></div>
         </div>
     );
 };

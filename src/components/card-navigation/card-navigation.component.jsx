@@ -1,4 +1,5 @@
 import React from 'react';
+import Divider from '../divider/divider.component';
 import SectionTitle from '../section-title/section-title.component';
 import CardItem from './../card-item/card-item.component';
 
@@ -10,12 +11,12 @@ const CardNavigation = () => {
     return (
         <div className='card-navigation'>
             <SectionTitle type='h2' mainTitle='DESARROLLOS' />
-            {/* <h2 className='title'>DESARROLLOS</h2> */}
             <ul className='card-container'>
                 <CardItem name='FINALIZADOS' items={items}></CardItem>
                 <CardItem name='EN CONSTRUCCION' items={items}></CardItem>
                 <CardItem name='FUTUROS LANZAMIENTOS' items={items}></CardItem>
             </ul>
+            <Divider />
         </div>
     );
 };

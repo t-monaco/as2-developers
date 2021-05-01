@@ -1,4 +1,5 @@
 import React from 'react';
+import Divider from '../divider/divider.component';
 import SectionTitle from '../section-title/section-title.component';
 import './about.styles.scss';
 
@@ -24,6 +25,7 @@ const About = () => {
                 </p>
                 <img src='https://picsum.photos/650/350' alt='' />
             </article>
+            <Divider />
         </div>
     );
 };

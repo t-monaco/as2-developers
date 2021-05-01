@@ -1,12 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Divider from '../divider/divider.component';
 import SectionTitle from '../section-title/section-title.component';
 import './contact.styles.scss';
 
 const Contact = () => {
     return (
         <div className='contact' id='contacto'>
-            <SectionTitle type='h2' secondaryTitle='MAS INFO' mainTitle='CONTACTANOS' />
+            <SectionTitle
+                type='h2'
+                secondaryTitle='MAS INFO'
+                mainTitle='CONTACTANOS'
+            />
             <div className='contact-info'>
                 <ul>
                     <li className='phone'>
@@ -23,6 +28,7 @@ const Contact = () => {
                     </li>
                 </ul>
             </div>
+            <Divider />
         </div>
     );
 };

@@ -1,9 +1,37 @@
+@import './../../variables';
+
 .project-content {
+    width: 100%;
+
     .slider {
         height: 30vh;
 
         .slick-slider {
             height: 100%;
+        }
+    }
+
+    .description {
+        margin: 0 auto;
+        padding: 50px;
+        width: 100%;
+    }
+
+    .divider {
+        background-color: #eee;
+        height: 2px;
+        width: 88%;
+        margin: 0 auto 2rem;
+    }
+
+    @media screen and (min-width: $breakpoint-mobile) {
+
+        .slider {
+            height: 44vh;
+        }
+
+        .description {
+            max-width: $desktop-max_width;
         }
     }
 }

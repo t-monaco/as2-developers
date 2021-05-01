@@ -2,12 +2,9 @@
 
 .contact {
     align-items: center;
-    border-top: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
     display: flex;
     flex-direction: column;
-    padding: 30px 10px;
-    margin-bottom: 40px;
+    padding: 10px;
 
     .contact-info {
         width: 100%;
@@ -30,9 +27,9 @@
     }
 
     @media screen and (min-width: $breakpoint-mobile) {
-        margin: 60px auto 0;
+        margin: 0 auto;
         max-width: $desktop-max_width;
-        
+
         .contact-info {
             ul {
                 display: flex;
