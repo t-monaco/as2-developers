@@ -23,23 +23,60 @@
     }
 
     .slick-arrow {
+        $arrow-width: 40px;
+        $arrow-height: $arrow-width;
+
         top: unset;
         left: unset;
-        bottom: 0;
+        bottom: 5px;
         position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: blue;
+        width: $arrow-width;
+        height: $arrow-height;
         z-index: 99;
-        
+        transform: translate(0);
+        border-radius: 50%;
+
         &.slick-next {
-            right: 0;
+            right: 10px;
         }
         &.slick-prev {
-            right: 50px;
+            right: $arrow-width + 5px;
+        }
+
+        &.slick-prev,
+        &.slick-next {
+            &::before {
+                font-size: 2rem;
+                transition: opacity 0.2s ease-in-out;
+
+            }
+            &:hover {
+                opacity: 1;
+            }
         }
     }
 
     @media screen and (min-width: $breakpoint-mobile) {
+        .slick-arrow {
+            $arrow-width: 60px;
+            $arrow-height: $arrow-width;
+
+            height: $arrow-height;
+            width: $arrow-width;
+
+            &.slick-next {
+                right: 30px;
+            }
+            &.slick-prev {
+                right: $arrow-width + 15px;
+            }
+
+            &.slick-prev,
+            &.slick-next {
+                &::before {
+                    font-size: 2.5rem;
+                }
+            }
+        }
     }
 }
