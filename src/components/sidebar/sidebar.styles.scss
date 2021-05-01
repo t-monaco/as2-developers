@@ -6,9 +6,9 @@
     color: #fff;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - #{$header-height});
+    height: calc(100vh - #{$header-height-mobile});
     right: 0;
-    top: $header-height;
+    top: $header-height-mobile;
     position: absolute;
     width: 80%;
 
