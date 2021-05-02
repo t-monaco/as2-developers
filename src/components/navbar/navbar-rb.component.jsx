@@ -39,7 +39,7 @@ const NavbarRB = () => {
                 <Link smooth to='/#top' class='navbar-brand'>
                     <Logo />
                 </Link>
-                <NavbarToggler onClick={toggle} />
+                <NavbarToggler onClick={toggle} className={`${isOpen ? 'open' : ''}`} />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='' navbar>
                         <NavItem>
