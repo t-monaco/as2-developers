@@ -22,6 +22,20 @@
         overflow: hidden;
     }
 
+    .slick-dots {
+        bottom: 20px;
+        height: auto;
+        position: absolute;
+        li {
+            button {
+                &::before{
+                    color: #fff;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
     .slick-arrow {
         $arrow-width: 40px;
         $arrow-height: $arrow-width;
