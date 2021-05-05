@@ -33,12 +33,13 @@
             background-image: none !important;
             background-color: #000 !important;
             border-radius: 4px;
-            transition: all 0.4s ease-in-out;
+            bottom: 13px !important;
             height: 3px !important;
-            width: 55% !important;
+            transition: all 0.4s ease-in-out;
+            position: absolute !important;
+            width: 100% !important;
 
-            &::before,
-            &::after {
+            &::before {
                 transition: all 0.4s ease-in-out;
                 border-radius: 4px;
                 content: '';
@@ -46,31 +47,17 @@
                 right: 0;
                 background-color: #000 !important;
                 height: 3px !important;
-            }
-
-            &::before {
                 width: 40px !important;
                 transform: translateY(-10px);
-            }
-
-            &::after {
-                transform: translateY(10px);
-                width: 32px !important;
             }
         }
 
         &.open {
             > span {
-                transform: translateX(50%);
-                background-color: transparent !important;
+                transform: rotate(45deg) translate(-3px, -4px);
 
                 &::before {
-                    transform: rotate(-45deg) translate(-7px, -7px);
-                }
-
-                &::after {
-                    transform: rotate(45deg) translate(-7px, 7px);
-                    width: 40px !important;
+                    transform: rotate(-90deg);
                 }
             }
         }
@@ -123,15 +110,15 @@
         }
 
         .nav-item {
-            padding: 0 .5rem;
-            
+            padding: 0 0.5rem;
+
             .nav-link {
                 position: relative;
                 overflow-x: hidden;
                 padding: 0 !important;
-                
+
                 &::before {
-                    transition: transform .3s ease-in-out;
+                    transition: transform 0.3s ease-in-out;
                     position: absolute;
                     height: 2px;
                     width: 100%;
@@ -151,9 +138,9 @@
             }
         }
 
-         &-toggler{
-             display: none !important;
-         }
+        &-toggler {
+            display: none !important;
+        }
 
         .dropdown {
             &-menu {
