@@ -1,8 +1,12 @@
 @import './../../_variables.scss';
 
 .navbar {
+    $navbar-background-color-top: rgba(41, 41, 41, 0.5);
+    $navbar-background-color-scroll: rgba(41, 41, 41, 0.5);
+    $navbar-background-color-scroll: #323232;
+
     align-items: center;
-    background-color: hsla(0, 0%, 100%, 0.63);
+    background-color: $navbar-background-color-top;
     display: flex;
     height: $header-height-mobile;
     justify-content: space-between;
@@ -31,7 +35,7 @@
 
         > span {
             background-image: none !important;
-            background-color: #000 !important;
+            background-color: #fff !important;
             border-radius: 4px;
             bottom: 13px !important;
             height: 3px !important;
@@ -45,7 +49,7 @@
                 content: '';
                 position: absolute;
                 right: 0;
-                background-color: #000 !important;
+                background-color: #fff !important;
                 height: 3px !important;
                 width: 40px !important;
                 transform: translateY(-10px);
@@ -64,13 +68,13 @@
     }
 
     .nav-link {
-        color: #000 !important;
+        color: #fff !important;
         font-weight: 500;
     }
 
     &-collapse,
     .collapsing {
-        background-color: hsla(0, 0%, 100%, 0.63);
+        background-color: $navbar-background-color-top;
         left: 0;
         padding: 0.5rem 1rem;
         position: absolute;
@@ -79,6 +83,14 @@
     }
 
     .dropdown {
+        * {
+            color: #fff;
+        }
+
+        &-header {
+            font-weight: 700;
+        }
+
         &-menu {
             background-color: unset;
             border: none;
@@ -87,14 +99,20 @@
         &-divider {
             border-color: #ccc;
         }
+
+        &-toggle {
+            &::after {
+                display: none;
+            }
+        }
     }
 
     &.scroll {
-        background-color: #eee;
+        background-color: $navbar-background-color-scroll;
 
         .navbar-collapse,
         .collapsing {
-            background-color: #eee;
+            background-color: $navbar-background-color-scroll;
         }
     }
 
@@ -123,7 +141,7 @@
                     height: 2px;
                     width: 100%;
                     content: '';
-                    background-color: #000;
+                    background-color: #fff;
                     bottom: 0;
                     left: 0;
                     transform: translateX(-100%);
@@ -145,7 +163,7 @@
         .dropdown {
             &-menu {
                 margin: 0;
-                background-color: hsla(0, 0%, 100%, 0.63);
+                background-color: $navbar-background-color-top;
                 top: $header-height-desktop - 28px;
                 border-radius: 0 0 0.25rem 0.25rem;
             }
@@ -167,10 +185,12 @@
         }
 
         &.scroll {
-            background-color: #eee;
+            background-color: $navbar-background-color-scroll;
 
-            .dropdown-menu {
-                background-color: #eee;
+            .dropdown {
+                &-menu {
+                    background-color: $navbar-background-color-scroll;
+                }
             }
         }
     }
