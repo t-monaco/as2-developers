@@ -63,7 +63,7 @@ const NavbarRB = () => {
                                     to='/touch01'
                                     class='dropdown-item'
                                     role='menuitem'
-                                    // onClick={toggle}
+                                    onClick={toggle}
                                 >
                                     TOUCH 01
                                 </Link>

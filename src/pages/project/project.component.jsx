@@ -1,5 +1,5 @@
 import React from 'react';
-import Contact from '../../components/contact/contact.components';
+import Contact from '../../components/contact/contact.component';
 import Hero from '../../components/hero/hero.component';
 import LocationMap from '../../components/location-map/location-map.component';
 import ProjectContent from '../../components/project-content/project-content.component';
