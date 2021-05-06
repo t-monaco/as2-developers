@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Contact from '../../components/contact/contact.component';
 import Hero from '../../components/hero/hero.component';
 import LocationMap from '../../components/location-map/location-map.component';
 import ProjectContent from '../../components/project-content/project-content.component';
 import './project.styles.scss';
+import PropertiesContext from './../../contexts/properties/properties.context';
+import { useParams } from 'react-router-dom';
 
 const Project = () => {
+    const { projectId } = useParams();
+    const propertyContext  = useContext(PropertiesContext)[projectId] ;
+    console.log(propertyContext);
+
     return (
         <div>
-            <Hero imgUrl='https://picsum.photos/1500/700' />
-            <ProjectContent title='RESIDENCIAS' />
-            <ProjectContent title='AMENITIES' />
+            <Hero imgUrl={propertyContext.heroImage} />
+            <ProjectContent
+                title='RESIDENCIAS'
+                context={propertyContext.residence}
+            />
+            <ProjectContent
+                title='AMENITIES'
+                context={propertyContext.amenities}
+            />
             <LocationMap />
             <Contact />
         </div>

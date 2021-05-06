@@ -10,25 +10,22 @@ import slideImg02 from './../../assets/slider/slide_02.jpg';
 import slideImg03 from './../../assets/slider/slide_03.jpg';
 import slideImg04 from './../../assets/slider/slide_04.jpg';
 
-const SlickSlider = ({settings}) => {
+const SlickSlider = ({ images, settings }) => {
+    if (!images) {
+        images = [slideImg01, slideImg02, slideImg03, slideImg04];
+    }
+
     return (
         <div className='slider'>
             <Slider {...settings}>
-                <div className='slider-slide'>
-                    <img src={slideImg01} alt='' />
-                </div>
-                <div className='slider-slide'>
-                    <img src={slideImg02} alt='' />
-                </div>
-                <div className='slider-slide'>
-                    <img src={slideImg03} alt='' />
-                </div>
-                <div className='slider-slide'>
-                    <img src={slideImg04} alt='' />
-                </div>
+                {images.map((item) => (
+                    <div className='slider-slide'>
+                        <img src={item} alt='' />
+                    </div>
+                ))}
             </Slider>
         </div>
     );
 };
 
-export default SlickSlider
+export default SlickSlider;
