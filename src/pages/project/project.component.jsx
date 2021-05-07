@@ -24,7 +24,7 @@ const Project = () => {
                 title='AMENITIES'
                 context={propertyContext.amenities}
             />
-            <LocationMap />
+            <LocationMap location={propertyContext.location}/>
             <Contact />
         </div>
     );
