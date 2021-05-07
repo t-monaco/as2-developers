@@ -9,8 +9,9 @@ import { useParams } from 'react-router-dom';
 
 const Project = () => {
     const { projectId } = useParams();
-    const propertyContext  = useContext(PropertiesContext)[projectId] ;
-    console.log(propertyContext);
+    const propertyContext = useContext(PropertiesContext).filter(
+        (property) => property.linkName === projectId
+    )[0];
 
     return (
         <div>

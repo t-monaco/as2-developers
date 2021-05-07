@@ -169,7 +169,12 @@
             }
 
             &-item {
-                &:hover {
+                &:hover,
+                &:active {
+                    background-color: #e9ecef;
+                    > a{
+                        color: #000;
+                    }
                 }
             }
 

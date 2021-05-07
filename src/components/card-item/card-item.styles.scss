@@ -1,9 +1,8 @@
 .card-item {
-    background-color: lightsalmon;
     height: 220px;
     position: relative;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     margin: 20px 0;
 
     img {
@@ -54,6 +53,11 @@
             height: 100%;
             justify-content: center;
             width: 100%;
+
+            .property-logo{
+                width: 45%;
+                object-fit: contain;
+            }
         }
     }
     

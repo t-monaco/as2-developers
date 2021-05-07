@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { HashLink as Link } from 'react-router-hash-link';
 import {
     Collapse,
@@ -12,6 +12,7 @@ import {
     DropdownItem,
 } from 'reactstrap';
 import { ReactComponent as Logo } from './../../assets/as2_developers--logo.svg';
+import PropertiesContext from './../../contexts/properties/properties.context';
 
 import './navbar-rb.styles.scss';
 
@@ -19,6 +20,8 @@ const NavbarRB = () => {
     const [scrollTop, setScrollTop] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+
+    const propertiesContext = useContext(PropertiesContext);
 
     useEffect(() => {
         const onScroll = (e) => {
@@ -36,17 +39,20 @@ const NavbarRB = () => {
                 light
                 className={`${!scrollTop ? 'scroll' : ''}`}
             >
-                <Link smooth to='/#top' class='navbar-brand'>
+                <Link smooth to='/#top' className='navbar-brand'>
                     <Logo />
                 </Link>
-                <NavbarToggler onClick={toggle} className={`${isOpen ? 'open' : ''}`} />
+                <NavbarToggler
+                    onClick={toggle}
+                    className={`${isOpen ? 'open' : ''}`}
+                />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='' navbar>
                         <NavItem>
                             <Link
                                 smooth
                                 to='/#top'
-                                class='nav-link'
+                                className='nav-link'
                                 onClick={toggle}
                             >
                                 HOME
@@ -56,57 +62,64 @@ const NavbarRB = () => {
                             <DropdownToggle nav caret>
                                 DESARROLLOS
                             </DropdownToggle>
-                            <DropdownMenu left>
+                            <DropdownMenu left='true'>
                                 <DropdownItem divider />
                                 <DropdownItem header>FINALIZADOS</DropdownItem>
-                                <Link
-                                    to='/touch01'
-                                    class='dropdown-item'
-                                    role='menuitem'
-                                    onClick={toggle}
-                                >
-                                    TOUCH 01
-                                </Link>
-                                <Link
-                                    to='/touch01'
-                                    class='dropdown-item'
-                                    role='menuitem'
-                                    onClick={toggle}
-                                >
-                                    TOUCH 02
-                                </Link>
+                                {propertiesContext
+                                    .filter(
+                                        (property) =>
+                                            property.status === 'finalizado'
+                                    )
+                                    .map((property) => (
+                                        <DropdownItem key={property.id}>
+                                            <Link
+                                                to={`/${property.linkName}`}
+                                                onClick={toggle}
+                                            >
+                                                {property.name}
+                                            </Link>
+                                        </DropdownItem>
+                                    ))}
                                 <DropdownItem divider />
                                 <DropdownItem header>
                                     EN CONSTRUCCION
                                 </DropdownItem>
-                                <Link
-                                    to='/touch01'
-                                    class='dropdown-item'
-                                    role='menuitem'
-                                    onClick={toggle}
-                                >
-                                    TOUCH 03
-                                </Link>
+                                {propertiesContext
+                                    .filter(
+                                        (property) =>
+                                            property.status ===
+                                            'en construccion'
+                                    )
+                                    .map((property) => (
+                                        <DropdownItem key={property.id}>
+                                            <Link
+                                                to={`/${property.linkName}`}
+                                                onClick={toggle}
+                                            >
+                                                {property.name}
+                                            </Link>
+                                        </DropdownItem>
+                                    ))}
                                 <DropdownItem divider />
                                 <DropdownItem header>
                                     FUTUROS LAZAMIENTOS
                                 </DropdownItem>
-                                <Link
-                                    to='/touch01'
-                                    class='dropdown-item'
-                                    role='menuitem'
-                                    onClick={toggle}
-                                >
-                                    TOUCH 04
-                                </Link>
-                                <Link
-                                    to='/touch01'
-                                    class='dropdown-item'
-                                    role='menuitem'
-                                    onClick={toggle}
-                                >
-                                    TOUCH 05
-                                </Link>
+                                {propertiesContext
+                                    .filter(
+                                        (property) =>
+                                            property.status ===
+                                            'futuro lanzamiento'
+                                    )
+                                    .map((property) => (
+                                        <DropdownItem key={property.id}>
+                                            <Link
+                                                to={`/${property.linkName}`}
+                                                onClick={toggle}
+                                            >
+                                                {property.name}
+                                            </Link>
+                                        </DropdownItem>
+                                    ))}
                                 <DropdownItem divider />
                             </DropdownMenu>
                         </UncontrolledDropdown>
@@ -114,7 +127,7 @@ const NavbarRB = () => {
                             <Link
                                 smooth
                                 to='/#nosotros'
-                                class='nav-link'
+                                className='nav-link'
                                 onClick={toggle}
                             >
                                 NOSOTROS
@@ -124,7 +137,7 @@ const NavbarRB = () => {
                             <Link
                                 smooth
                                 to='/#contacto'
-                                class='nav-link'
+                                className='nav-link'
                                 onClick={toggle}
                             >
                                 CONTACTO

@@ -22,13 +22,17 @@
         overflow: hidden;
     }
 
+    .slick-slide {
+        transition-duration: 2s !important;
+    }
+
     .slick-dots {
         bottom: 20px;
         height: auto;
         position: absolute;
         li {
             button {
-                &::before{
+                &::before {
                     color: #fff;
                     font-size: 10px;
                 }
@@ -62,7 +66,6 @@
             &::before {
                 font-size: 2rem;
                 transition: opacity 0.2s ease-in-out;
-
             }
             &:hover {
                 opacity: 1;

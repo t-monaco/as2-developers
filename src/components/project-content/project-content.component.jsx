@@ -21,8 +21,8 @@ const ProjectContent = ({ title, context }) => {
             <SlickSlider settings={sliderSettings} images={context.imagesUrl}/>
 
             <div className='description'>
-                {context.text.map((item) => (
-                    <p>{item}</p>
+                {context.text.map((item, key) => (
+                    <p key={key}>{item}</p>
                 ))}
             </div>
             <div className='divider'></div>
