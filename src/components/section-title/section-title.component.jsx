@@ -1,7 +1,7 @@
 import React from 'react';
 import './section-title.styles.scss';
 
-const SectionTitle = ({ type, secondaryTitle, mainTitle }) => {
+const SectionTitle = ({ type = 'h1', secondaryTitle, mainTitle }) => {
     const Heading = type
 
     return (
