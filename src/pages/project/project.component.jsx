@@ -6,6 +6,7 @@ import ProjectContent from '../../components/project-content/project-content.com
 import './project.styles.scss';
 import PropertiesContext from './../../contexts/properties/properties.context';
 import { useParams } from 'react-router-dom';
+import Blueprint from '../../components/blueprint/blueprint.component';
 
 const Project = () => {
     const { projectId } = useParams();
@@ -24,7 +25,12 @@ const Project = () => {
                 title='AMENITIES'
                 context={propertyContext.amenities}
             />
-            <LocationMap location={propertyContext.location}/>
+            <LocationMap location={propertyContext.location} />
+            <Blueprint
+                blueprint={propertyContext.blueprint}
+                linkName={propertyContext.linkName}
+                name={propertyContext.name}
+            />
             <Contact />
         </div>
     );
