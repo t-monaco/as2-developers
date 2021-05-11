@@ -3,11 +3,9 @@ import GoogleMapReact from 'google-map-react';
 import GoogleMapsMarker from './../google-maps-marker/google-maps-marker.component';
 
 const SimpleMap = ({ lat, lng, name }) => {
-    const [center, setCenter] = useState({ lat: lat, lng: lng });
-    const [zoom, setZoom] = useState(14);
-    const [secretKey, setSecretKey] = useState(
-        process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-    );
+    const [center] = useState({ lat: lat, lng: lng });
+    const [zoom] = useState(14);
+    const secretKey =  process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 
 
     const getMapOptions = (maps) => {
