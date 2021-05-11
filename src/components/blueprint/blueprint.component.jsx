@@ -31,8 +31,6 @@ const Blueprint = ({ blueprint, linkName, name }) => {
                 ? Infinity
                 : filterOptions[filterOptions.indexOf(squareMeterFilter) + 1];
 
-        console.log(lowerThan);
-
         return setFilterBlueprints(
             blueprint.filter(
                 (floor) =>
@@ -70,15 +68,15 @@ const Blueprint = ({ blueprint, linkName, name }) => {
                         </div>
                     ))}
                 </div>
-            <a
-                className='blueprint-download-pdf'
-                href={`documents/${linkName}/blueprint/${linkName}_planos_${squareMeterFilter}m2.pdf`}
-                download={`Planos ${name} - ${squareMeterFilter} m2`}
-                target='_blank'
-                rel='noopener noreferrer'
-            >
-                Descargar plantas
-            </a>
+                <a
+                    className='blueprint-download-pdf'
+                    href={`documents/${linkName}/blueprint/${linkName}_planos_${squareMeterFilter}m2.pdf`}
+                    download={`Planos ${name} - ${squareMeterFilter} m2`}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    Descargar plantas
+                </a>
             </div>
             <SlickSlider
                 settings={sliderSettings}
