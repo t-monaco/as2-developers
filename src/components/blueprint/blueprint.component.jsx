@@ -64,7 +64,7 @@ const Blueprint = ({ blueprint, linkName, name }) => {
                                 onChange={handleChange}
                                 checked={squareMeterFilter === value}
                             />
-                            <label htmlFor={key}>Desde {value} metros</label>
+                            <label htmlFor={key}>Desde {value} m2</label>
                         </div>
                     ))}
                 </div>

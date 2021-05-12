@@ -18,7 +18,7 @@
 
         .input-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             justify-content: center;
             grid-gap: 0.7rem;
             margin-bottom: 1.5rem;
@@ -51,7 +51,8 @@
         }
 
         .blueprint-download-pdf {
-            border: 1px solid #323232;
+            background-color: #323232;
+            color: #fff;
             justify-self: end;
             margin-bottom: 2rem;
             padding: 0.5rem 1rem;
@@ -60,8 +61,6 @@
             width: 100%;
 
             &:hover {
-                background-color: #323232;
-                color: #fff;
             }
         }
     }
@@ -97,6 +96,7 @@
             }
 
             .input-container {
+                grid-template-columns: repeat(2, 1fr);
                 margin-top: 4rem;
             }
 
