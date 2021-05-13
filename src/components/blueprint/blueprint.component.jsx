@@ -16,7 +16,7 @@ const Blueprint = ({ blueprint, linkName, name }) => {
         fade: true,
     };
 
-    const [filterOptions] = useState([35, 50, 70, 80]);
+    const [filterOptions] = useState([35, 50, 70, 120]);
 
     const [squareMeterFilter, setSquareMeterFilter] = useState(
         filterOptions[0]
