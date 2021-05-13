@@ -14,12 +14,14 @@ const CardNavigation = () => {
             <SectionTitle type='h2' mainTitle='DESARROLLOS' />
             <ul className='card-container'>
                 <CardItem
+                    imageUrl='images/general/card-navigation/card-navigation-bg--finalizado.jpg'
                     name='FINALIZADOS'
                     items={propertiesContext
                         .filter((property) => property.status === 'finalizado')
                         .slice(0, 2)}
                 ></CardItem>
                 <CardItem
+                    imageUrl='https://picsum.photos/600/350'
                     name='EN CONSTRUCCION'
                     items={propertiesContext
                         .filter(
@@ -28,6 +30,7 @@ const CardNavigation = () => {
                         .slice(0, 2)}
                 ></CardItem>
                 <CardItem
+                    imageUrl='images/general/card-navigation/card-navigation-bg--finalizado.jpg'
                     name='FUTUROS LANZAMIENTOS'
                     items={propertiesContext
                         .filter(

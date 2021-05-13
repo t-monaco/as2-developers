@@ -251,10 +251,8 @@ const PROPERTIES_DATA = [
         blueprint: [
             {
                 name: 'piso_01_unidad_01',
-                // imageUrl:
-                //     'images/lib_5851/blueprint/blueprint_piso_01_unidad_01.jpg',
                 imageUrl:
-                    'https://via.placeholder.com/700x700?text=PISO+01+UNIDAD+01+44m',
+                    'images/lib_5851/blueprint/blueprint_piso_01_unidad_03.jpg',
                 squareMeters: 44,
             },
             {
@@ -266,7 +264,7 @@ const PROPERTIES_DATA = [
             {
                 name: 'piso_02_unidad_02',
                 imageUrl:
-                    'https://via.placeholder.com/700x700?text=PISO+03+UNIDAD+02+56m',
+                    'images/lib_5851/blueprint/blueprint_piso_01_unidad_03.jpg',
                 squareMeters: 56,
             },
             {

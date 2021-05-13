@@ -2,10 +2,10 @@ import React from 'react';
 import './card-item.styles.scss';
 import { Link } from 'react-router-dom';
 
-const CardItem = ({ img, logo, name, items }) => {
+const CardItem = ({ imageUrl, logo, name, items }) => {
     return (
         <li className='card-item'>
-            <img src='https://picsum.photos/600/350' alt='' />
+            <img src={imageUrl} alt='' />
             <div className='display-text'>
                 <h3>{name}</h3>
             </div>
