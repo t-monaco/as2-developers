@@ -66,12 +66,22 @@
     }
 
     .slider {
-        height: 50vh;
+        height: 65vh;
         margin-bottom: 3.125rem;
 
         .slider-slide {
             img {
+                object-fit: contain !important;
                 object-position: center;
+            }
+        }
+
+        .slick-arrow {
+            &.slick-prev,
+            &.slick-next {
+                &::before {
+                    color: #000;
+                }
             }
         }
     }
@@ -105,6 +115,10 @@
                 margin-bottom: 0;
                 width: 210px;
             }
+        }
+
+        .slider {
+            height: 80vh;
         }
     }
 }
