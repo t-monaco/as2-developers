@@ -29,8 +29,8 @@ const PROPERTIES_DATA = [
             ],
         },
         location: {
-            lat: -34.557967,
-            lng: -34.557967,
+            lat: -34.57428,
+            lng: -58.47288,
             address: 'Avenida del Libertador 5851, CABA',
         },
         thumbnail: 'images/sucre/thumbnail/thumbnail_01.jpg',
@@ -100,8 +100,8 @@ const PROPERTIES_DATA = [
             ],
         },
         location: {
-            lat: -34.557967,
-            lng: -58.44649,
+            lat: -34.63293,
+            lng: -58.45538,
             address: 'Avenida del Libertador 5851, CABA',
         },
         thumbnail: 'images/bilbao/thumbnail/thumbnail_01.jpg',
@@ -171,8 +171,8 @@ const PROPERTIES_DATA = [
             ],
         },
         location: {
-            lat: -34.557967,
-            lng: -58.44649,
+            lat: -34.57375,
+            lng: -58.46032,
             address: 'Avenida del Libertador 5851, CABA',
         },
         thumbnail: 'images/superi/thumbnail/thumbnail_01.jpg',
@@ -216,15 +216,15 @@ const PROPERTIES_DATA = [
 
     {
         id: uuid(),
-        name: 'LIB 5851',
-        linkName: 'lib_5851',
-        heroImage: 'images/lib_5851/heroImage/heroImage_01.jpg',
+        name: 'LIBERTADOR OFFICE',
+        linkName: 'libertador_office',
+        heroImage: 'images/libertador_office/heroImage/heroImage_01.jpg',
         category: 'touch',
         status: 'futuro lanzamiento',
         residence: {
             imagesUrl: [
-                'images/lib_5851/residence/residence_01.jpg',
-                'images/lib_5851/residence/residence_02.jpg',
+                'images/libertador_office/residence/residence_01.jpg',
+                'images/libertador_office/residence/residence_02.jpg',
             ],
             text: [
                 'Residence, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi,consequatur totam? Neque est asperiores vero, nulla similiqueno strum non maxime. Labore consequuntur nobis sit molestiae consectetur totam quo aperiam dolorum.',
@@ -233,8 +233,8 @@ const PROPERTIES_DATA = [
         },
         amenities: {
             imagesUrl: [
-                'images/lib_5851/amenities/amenities_01.jpg',
-                'images/lib_5851/amenities/amenities_02.jpg',
+                'images/libertador_office/amenities/amenities_01.jpg',
+                'images/libertador_office/amenities/amenities_02.jpg',
             ],
             text: [
                 'Amenities, Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi,consequatur totam? Neque est asperiores vero, nulla similiqueno strum non maxime. Labore consequuntur nobis sit molestiae consectetur totam quo aperiam dolorum.',
@@ -246,13 +246,13 @@ const PROPERTIES_DATA = [
             lng: -58.44649,
             address: 'Avenida del Libertador 5851, CABA',
         },
-        thumbnail: 'images/lib_5851/thumbnail/thumbnail_01.jpg',
-        logo: 'images/lib_5851/logo/logo_01.png',
+        thumbnail: 'images/libertador_office/thumbnail/thumbnail_01.jpg',
+        logo: 'images/libertador_office/logo/logo_01.png',
         blueprint: [
             {
                 name: 'piso_01_unidad_01',
                 imageUrl:
-                    'images/lib_5851/blueprint/blueprint_piso_01_unidad_03.jpg',
+                    'images/libertador_office/blueprint/blueprint_piso_01_unidad_03.jpg',
                 squareMeters: 44,
             },
             {
@@ -264,7 +264,7 @@ const PROPERTIES_DATA = [
             {
                 name: 'piso_02_unidad_02',
                 imageUrl:
-                    'images/lib_5851/blueprint/blueprint_piso_01_unidad_03.jpg',
+                    'images/libertador_office/blueprint/blueprint_piso_01_unidad_03.jpg',
                 squareMeters: 56,
             },
             {
@@ -279,7 +279,7 @@ const PROPERTIES_DATA = [
                     'https://via.placeholder.com/700x700?text=PISO+01+UNIDAD+01+90m',
                 squareMeters: 90,
             },
-            // documents/lib_5851/blueprint/lib_5851_planos_35m2.pdf
+            // documents/libertador_office/blueprint/libertador_office_planos_35m2.pdf
         ],
     },
 ];

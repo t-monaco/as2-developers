@@ -6,23 +6,21 @@ import './about.styles.scss';
 const About = () => {    
     return (
         <div className='about' id='nosotros'>
-            <SectionTitle type='h2' secondaryTitle='SOBRE' mainTitle='NOSOTROS' />
+            <SectionTitle
+                type='h2'
+                secondaryTitle='SOBRE'
+                mainTitle='NOSOTROS'
+            />
             <article className='description'>
                 <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                    Sit excepturi fugiat fuga, vel animi ea eaque eligendi
-                    similique, perferendis natus tempore officiis quos odio
-                    soluta recusandae error at saepe cupiditate. Enim saepe
-                    tenetur, vero laboriosam voluptatum eius nemo sequi non
-                    facilis sunt ratione quisquam natus perspiciatis nihil
-                    provident accusantium sit! Optio commodi porro eveniet ex
-                    voluptate voluptas, magnam corrupti ducimus!
+                    En AS2 Developers creemos en la arquitectura como la fusión
+                    de las artes pintura música y escultura; al desarrollo
+                    inmobiliario como la integración de las áreas de análisis de
+                    mercado, ubicación de terrenos, definición de producto,
+                    gerenciamiento, y comercialización como una manera de
+                    dialogar con el mundo.
                 </p>
-                <p>
-                    Ducimus in excepturi atque, explicabo dicta fugiat nobis
-                    eaque amet possimus tempora sit cumque velit voluptatem ad
-                    quibusdam quia quis voluptatum similique cupidita
-                </p>
+                <p>AS2 define sus TOUCH como un nuevo concepto de vida.</p>
                 <img src='https://picsum.photos/650/350' alt='' />
             </article>
             <Divider />

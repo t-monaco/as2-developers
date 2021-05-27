@@ -2,7 +2,7 @@ import React from 'react';
 import './card-item.styles.scss';
 import { Link } from 'react-router-dom';
 
-const CardItem = ({ imageUrl, logo, name, items }) => {
+const CardItem = ({ imageUrl, name, items }) => {
     return (
         <li className='card-item'>
             <img src={imageUrl} alt='' />
@@ -11,9 +11,9 @@ const CardItem = ({ imageUrl, logo, name, items }) => {
             </div>
             <div className='item-container'>
                 {items &&
-                    items.map(({name, linkName}, key) => (
+                    items.map(({name, linkName, logo}, key) => (
                         <Link to={`/${linkName}`} className='item' key={key}>
-                            <img className='property-logo' src='images/sucre/logo/logo_01.png' alt=""/>
+                            <img className='property-logo' src={logo} alt={name}/>
                         </Link>
                     ))}
             </div>

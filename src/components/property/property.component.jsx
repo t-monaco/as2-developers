@@ -6,7 +6,6 @@ const Property = ({ imgUrl, linkName, name, status }) => {
     return (
         <li className='property-container'>
             <Link className='property' to={`/${linkName}`}>
-                {/* <img src='https://picsum.photos/650/350' alt='' /> */}
                 <img src={imgUrl} alt='' />
                 <span className='divider' />
                 <div className='property-info'>

@@ -21,18 +21,18 @@ const Contact = () => {
                     <li className='address'>
                         <h4>DIRECCIÓN</h4>
                         <a
-                            href='https://goo.gl/maps/fSM14fjxeusiyAEZ8'
+                            href='https://goo.gl/maps/DLTWoupQTW3TjCXN6'
                             target='_blank'
                             rel='noopener noreferrer'
                         >
-                            DEHEZA 1671
+                            Paraguay 754 Piso 3 Of B - CABA
                         </a>
                     </li>
                     <Divider />
                     <li className='email'>
                         <h4>EMAIL</h4>
-                        <a href='mailto:as@as2developers.com'>
-                            AS@AS2DEVELOPERS.COM
+                        <a href='mailto:data@as2developers.com'>
+                            data@as2developers.com
                         </a>
                     </li>
                 </ul>

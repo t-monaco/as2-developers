@@ -21,7 +21,7 @@ const CardNavigation = () => {
                         .slice(0, 2)}
                 ></CardItem>
                 <CardItem
-                    imageUrl='https://picsum.photos/600/350'
+                    imageUrl='images/general/card-navigation/card-navigation-bg--construccion.jpg'
                     name='EN CONSTRUCCION'
                     items={propertiesContext
                         .filter(
@@ -30,7 +30,7 @@ const CardNavigation = () => {
                         .slice(0, 2)}
                 ></CardItem>
                 <CardItem
-                    imageUrl='images/general/card-navigation/card-navigation-bg--finalizado.jpg'
+                    imageUrl='images/general/card-navigation/card-navigation-bg--futuros.jpg'
                     name='FUTUROS LANZAMIENTOS'
                     items={propertiesContext
                         .filter(
