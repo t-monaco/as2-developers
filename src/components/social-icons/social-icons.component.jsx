@@ -2,6 +2,7 @@ import React from 'react';
 import {ReactComponent as FacebookIcon} from './../../assets/facebook-logo.svg'
 import {ReactComponent as TwitterIcon} from './../../assets/twitter-logo.svg'
 import {ReactComponent as InstagramIcon} from './../../assets/instagram-logo.svg'
+import {ReactComponent as ASIcon} from './../../assets/as--logo.svg'
 import './social-icons.styles.scss'
 
 const SocialIcons = () => {
@@ -45,7 +46,7 @@ const SocialIcons = () => {
                         href='https://facebook.com'
                         rel='noopener noreferrer'
                     >
-                        <TwitterIcon className='icon' />
+                        <ASIcon className='icon' />
                     </a>
                 </li>
             </ul>

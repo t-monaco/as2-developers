@@ -26,6 +26,9 @@
             .icon-link {
                 border-radius: 50%;
                 padding: 8px;
+                .icon {
+                    fill: #000;
+                }
 
                 &:hover {
                     background-color: #000;
