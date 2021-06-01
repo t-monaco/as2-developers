@@ -18,13 +18,15 @@ const Project = () => {
         <div>
             <Hero imgUrl={propertyContext.heroImage} />
             <ProjectContent
-                title='RESIDENCIAS'
+                title={propertyContext.residence.title.toUpperCase()}
                 context={propertyContext.residence}
             />
-            <ProjectContent
-                title='AMENITIES'
-                context={propertyContext.amenities}
-            />
+            {propertyContext.amenities && (
+                <ProjectContent
+                    title={propertyContext.amenities.title.toUpperCase()}
+                    context={propertyContext.amenities}
+                />
+            )}
             <LocationMap location={propertyContext.location} />
             <Blueprint
                 blueprint={propertyContext.blueprint}
