@@ -21,7 +21,7 @@ const About = () => {
                     dialogar con el mundo.
                 </p>
                 <p>AS2 define sus TOUCH como un nuevo concepto de vida.</p>
-                <img src='https://picsum.photos/650/350' alt='' />
+                <img src='images/general/about/about_01.jpg' alt='Sobre Nosotros' />
             </article>
             <Divider />
         </div>
