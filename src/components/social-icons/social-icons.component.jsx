@@ -14,7 +14,7 @@ const SocialIcons = () => {
                     <a
                         className='icon-link'
                         target='_blank'
-                        href='https://instagram.com'
+                        href='https://www.instagram.com/as2developers/'
                         rel='noopener noreferrer'
                     >
                         <InstagramIcon className='icon' />
