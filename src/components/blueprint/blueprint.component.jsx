@@ -24,34 +24,34 @@ const Blueprint = ({
 
     const [filterOptions, setFilterOptions] = useState([]);
 
-    const [squareMeterFilter, setSquareMeterFilter] = useState(null);
+    const [filterValue, setFilterValue] = useState(null);
 
     const [filterBlueprints, setFilterBlueprints] = useState([]);
     
     useEffect(() => {
         if (blueprintFilters) {
             setFilterOptions(blueprintFilters);
-            setSquareMeterFilter(blueprintFilters[0]);
+            setFilterValue(blueprintFilters[0]);
         }else{
             setFilterOptions([35, 50, 70, 120]);
-            setSquareMeterFilter(35)
+            setFilterValue(35)
         }
     }, [blueprintFilters]);
 
     useEffect(() => {
-        if (typeof squareMeterFilter === 'string') {
+        if (typeof filterValue === 'string') {
             return setFilterBlueprints(
                 blueprint.filter(
-                    (floor) => floor.squareMeters === squareMeterFilter
+                    (floor) => floor.squareMeters === filterValue
                 )
             );
         } else {
-            let higherThan = squareMeterFilter;
+            let higherThan = filterValue;
             let lowerThan =
-                squareMeterFilter === filterOptions[filterOptions.length - 1]
+                filterValue === filterOptions[filterOptions.length - 1]
                     ? Infinity
                     : filterOptions[
-                          filterOptions.indexOf(squareMeterFilter) + 1
+                          filterOptions.indexOf(filterValue) + 1
                       ];
 
             return setFilterBlueprints(
@@ -62,13 +62,13 @@ const Blueprint = ({
                 )
             );
         }
-    }, [blueprint, filterOptions, squareMeterFilter]);
+    }, [blueprint, filterOptions, filterValue]);
 
     const handleChange = (event) =>{
-        if(typeof squareMeterFilter === 'string') {
-            return setSquareMeterFilter(event.target.value);
+        if(typeof filterValue === 'string') {
+            return setFilterValue(event.target.value);
         } else {
-            return setSquareMeterFilter(parseInt(event.target.value));
+            return setFilterValue(parseInt(event.target.value));
         }
        
     }
@@ -110,7 +110,7 @@ const Blueprint = ({
                                     type='radio'
                                     value={value}
                                     onChange={handleChange}
-                                    checked={squareMeterFilter === value}
+                                    checked={filterValue === value}
                                 />
                                 {typeof value === 'string' ? (
                                     <label htmlFor={key}>{value}</label>
@@ -128,11 +128,11 @@ const Blueprint = ({
                         <a
                             className='downloadable-input floors-btn'
                             href={
-                                typeof squareMeterFilter === 'string'
-                                    ? `documents/${linkName}/blueprint/${linkName}_planos_${squareMeterFilter.replaceAll(' ', '_').toLocaleLowerCase()}.pdf`
-                                    : `documents/${linkName}/blueprint/${linkName}_planos_${squareMeterFilter}m2.pdf`
+                                typeof filterValue === 'string'
+                                    ? `documents/${linkName}/blueprint/${linkName}_planos_${filterValue.replaceAll(' ', '_').toLocaleLowerCase()}.pdf`
+                                    : `documents/${linkName}/blueprint/${linkName}_planos_${filterValue}m2.pdf`
                             }
-                            download={`Planos ${name} - ${squareMeterFilter} m2`}
+                            download={`Planos ${name} - ${filterValue} m2`}
                             target='_blank'
                             rel='noopener noreferrer'
                         >
