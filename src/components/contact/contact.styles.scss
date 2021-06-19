@@ -6,10 +6,6 @@
     flex-direction: column;
     padding: 10px;
 
-    .divider {
-        width: 100%;
-    }
-
     .contact-info {
         width: 100%;
 
@@ -43,7 +39,7 @@
 
                 li {
                     display: flex;
-                    flex-basis: 50%;
+                    flex-basis: 33%;
                     justify-content: center;
 
                     a {
