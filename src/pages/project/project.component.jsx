@@ -30,6 +30,7 @@ const Project = () => {
             <LocationMap location={propertyContext.location} />
             <Blueprint
                 blueprint={propertyContext.blueprint}
+                blueprintFilters={propertyContext.blueprint_filter}
                 linkName={propertyContext.linkName}
                 name={propertyContext.name}
                 project_details={propertyContext.project_details}

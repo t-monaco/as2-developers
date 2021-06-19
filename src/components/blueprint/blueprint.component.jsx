@@ -4,7 +4,13 @@ import SectionTitle from '../section-title/section-title.component';
 import SlickSlider from '../slick-slider/slick-slider.component';
 import './blueprint.styles.scss';
 
-const Blueprint = ({ blueprint, linkName, name, project_details }) => {
+const Blueprint = ({
+    blueprint,
+    blueprintFilters,
+    linkName,
+    name,
+    project_details,
+}) => {
     const sliderSettings = {
         autoplay: true,
         arrows: true,
@@ -16,32 +22,56 @@ const Blueprint = ({ blueprint, linkName, name, project_details }) => {
         fade: true,
     };
 
-    const [filterOptions] = useState([35, 50, 70, 120]);
+    const [filterOptions, setFilterOptions] = useState([]);
 
-    const [squareMeterFilter, setSquareMeterFilter] = useState(
-        filterOptions[0]
-    );
+    const [squareMeterFilter, setSquareMeterFilter] = useState(null);
 
     const [filterBlueprints, setFilterBlueprints] = useState([]);
+    
+    useEffect(() => {
+        if (blueprintFilters) {
+            setFilterOptions(blueprintFilters);
+            setSquareMeterFilter(blueprintFilters[0]);
+        }else{
+            setFilterOptions([35, 50, 70, 120]);
+            setSquareMeterFilter(35)
+        }
+    }, [blueprintFilters]);
 
     useEffect(() => {
-        let higherThan = squareMeterFilter;
-        let lowerThan =
-            squareMeterFilter === filterOptions[filterOptions.length - 1]
-                ? Infinity
-                : filterOptions[filterOptions.indexOf(squareMeterFilter) + 1];
+        if (typeof squareMeterFilter === 'string') {
+            return setFilterBlueprints(
+                blueprint.filter(
+                    (floor) => floor.squareMeters === squareMeterFilter
+                )
+            );
+        } else {
+            let higherThan = squareMeterFilter;
+            let lowerThan =
+                squareMeterFilter === filterOptions[filterOptions.length - 1]
+                    ? Infinity
+                    : filterOptions[
+                          filterOptions.indexOf(squareMeterFilter) + 1
+                      ];
 
-        return setFilterBlueprints(
-            blueprint.filter(
-                (floor) =>
-                    floor.squareMeters >= higherThan &&
-                    floor.squareMeters < lowerThan
-            )
-        );
+            return setFilterBlueprints(
+                blueprint.filter(
+                    (floor) =>
+                        floor.squareMeters >= higherThan &&
+                        floor.squareMeters < lowerThan
+                )
+            );
+        }
     }, [blueprint, filterOptions, squareMeterFilter]);
 
-    const handleChange = (event) =>
-        setSquareMeterFilter(parseInt(event.target.value));
+    const handleChange = (event) =>{
+        if(typeof squareMeterFilter === 'string') {
+            return setSquareMeterFilter(event.target.value);
+        } else {
+            return setSquareMeterFilter(parseInt(event.target.value));
+        }
+       
+    }
 
     return (
         <div className='blueprint'>
@@ -82,7 +112,13 @@ const Blueprint = ({ blueprint, linkName, name, project_details }) => {
                                     onChange={handleChange}
                                     checked={squareMeterFilter === value}
                                 />
-                                <label htmlFor={key}>Desde {value} m2</label>
+                                {typeof value === 'string' ? (
+                                    <label htmlFor={key}>{value}</label>
+                                ) : (
+                                    <label htmlFor={key}>
+                                        Desde {value} m2
+                                    </label>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -91,7 +127,11 @@ const Blueprint = ({ blueprint, linkName, name, project_details }) => {
                     {blueprint.length > 0 && (
                         <a
                             className='downloadable-input floors-btn'
-                            href={`documents/${linkName}/blueprint/${linkName}_planos_${squareMeterFilter}m2.pdf`}
+                            href={
+                                typeof squareMeterFilter === 'string'
+                                    ? `documents/${linkName}/blueprint/${linkName}_planos_${squareMeterFilter.replaceAll(' ', '_').toLocaleLowerCase()}.pdf`
+                                    : `documents/${linkName}/blueprint/${linkName}_planos_${squareMeterFilter}m2.pdf`
+                            }
                             download={`Planos ${name} - ${squareMeterFilter} m2`}
                             target='_blank'
                             rel='noopener noreferrer'

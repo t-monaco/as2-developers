@@ -240,38 +240,32 @@ const PROPERTIES_DATA = [
                 'Plantas amplias y versátiles que permiten flexibilizar los espacios de acuerdo a las necesidades.',
             ],
         },
+        blueprint_filter: ['PB', 'Piso 1', 'Piso 2', 'Piso 3 al 12'],
         blueprint: [
             {
-                name: 'piso_01_unidad_01',
+                name: 'planta_baja',
                 imageUrl:
-                    'images/libertador_office/blueprint/blueprint_piso_01_unidad_03.jpg',
-                squareMeters: 44,
+                    'images/libertador_office/blueprint/blueprint_planta_baja.jpg',
+                squareMeters: 'PB',
             },
             {
-                name: 'piso_01_unidad_02',
+                name: 'piso_01',
                 imageUrl:
-                    'https://via.placeholder.com/700x700?text=PISO+01+UNIDAD+01+48m',
-                squareMeters: 48,
+                    'images/libertador_office/blueprint/blueprint_piso_01.jpg',
+                squareMeters: 'Piso 1',
             },
             {
-                name: 'piso_02_unidad_02',
+                name: 'piso_02',
                 imageUrl:
-                    'images/libertador_office/blueprint/blueprint_piso_01_unidad_03.jpg',
-                squareMeters: 56,
+                    'images/libertador_office/blueprint/blueprint_piso_02.jpg',
+                squareMeters: 'Piso 2',
             },
             {
-                name: 'piso_03_unidad_03',
+                name: 'piso_03-12',
                 imageUrl:
-                    'https://via.placeholder.com/700x700?text=PISO+01+UNIDAD+01+78m',
-                squareMeters: 78,
+                    'images/libertador_office/blueprint/blueprint_piso_03-12.jpg',
+                squareMeters: 'Piso 3 al 12',
             },
-            {
-                name: 'piso_11_unidad_01',
-                imageUrl:
-                    'https://via.placeholder.com/700x700?text=PISO+01+UNIDAD+01+90m',
-                squareMeters: 90,
-            },
-            // documents/libertador_office/blueprint/libertador_office_planos_35m2.pdf
         ],
     },
 
