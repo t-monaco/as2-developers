@@ -5,7 +5,7 @@
     overflow: hidden;
     margin: 20px 0;
 
-    img {
+    > img {
         position: absolute;
         object-fit: cover;
         object-position: center;
@@ -24,7 +24,7 @@
         position: absolute;
         width: 100%;
         z-index: 2;
-        
+
         h3 {
             font-size: 1.8rem;
             font-weight: 600;
@@ -54,17 +54,21 @@
             justify-content: center;
             width: 100%;
 
-            .property-logo{
+            &.disabled {
+                pointer-events: none;
+                cursor: default;
+            }
+
+            .property-logo {
                 width: 45%;
                 object-fit: contain;
             }
         }
     }
-    
+
     &:hover {
         .item-container {
             transform: translateX(0);
         }
-        
     }
 }

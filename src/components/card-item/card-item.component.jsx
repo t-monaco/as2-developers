@@ -11,9 +11,17 @@ const CardItem = ({ imageUrl, name, items }) => {
             </div>
             <div className='item-container'>
                 {items &&
-                    items.map(({name, linkName, logo}, key) => (
-                        <Link to={`/${linkName}`} className='item' key={key}>
-                            <img className='property-logo' src={logo} alt={name}/>
+                    items.map(({ name, linkName, logo }, key) => (
+                        <Link
+                            to={`/${linkName}`}
+                            className={`item ${!linkName ? 'disabled' : ''}`}
+                            key={key}
+                        >
+                            <img
+                                className='property-logo'
+                                src={logo}
+                                alt={name}
+                            />
                         </Link>
                     ))}
             </div>

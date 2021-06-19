@@ -48,16 +48,6 @@ const NavbarRB = () => {
                 />
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className='' navbar>
-                        <NavItem>
-                            <Link
-                                smooth
-                                to='/#top'
-                                className='nav-link'
-                                onClick={toggle}
-                            >
-                                HOME
-                            </Link>
-                        </NavItem>
                         <UncontrolledDropdown nav inNavbar>
                             <DropdownToggle nav caret>
                                 DESARROLLOS
@@ -73,6 +63,7 @@ const NavbarRB = () => {
                                     .map((property) => (
                                         <DropdownItem key={property.id}>
                                             <Link
+                                                className={`${!property.linkName ? 'disabled': ''}`}
                                                 to={`/${property.linkName}`}
                                                 onClick={toggle}
                                             >
@@ -93,6 +84,7 @@ const NavbarRB = () => {
                                     .map((property) => (
                                         <DropdownItem key={property.id}>
                                             <Link
+                                                className={`${!property.linkName ? 'disabled': ''}`}
                                                 to={`/${property.linkName}`}
                                                 onClick={toggle}
                                             >
@@ -113,6 +105,7 @@ const NavbarRB = () => {
                                     .map((property) => (
                                         <DropdownItem key={property.id}>
                                             <Link
+                                                className={`${!property.linkName ? 'disabled': ''}`}
                                                 to={`/${property.linkName}`}
                                                 onClick={toggle}
                                             >

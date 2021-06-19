@@ -5,7 +5,10 @@ import './property.styles.scss';
 const Property = ({ imgUrl, linkName, name, status }) => {
     return (
         <li className='property-container'>
-            <Link className='property' to={`/${linkName}`}>
+            <Link
+                className={`property ${!linkName ? 'disabled' : ''}`}
+                to={`/${linkName}`}
+            >
                 <img src={imgUrl} alt='' />
                 <span className='divider' />
                 <div className='property-info'>
