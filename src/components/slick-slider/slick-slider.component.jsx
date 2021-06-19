@@ -18,9 +18,9 @@ const SlickSlider = ({ images, settings }) => {
     return (
         <div className='slider'>
             <Slider {...settings}>
-                {images.map((item, key) => (
+                {images.map((image, key) => (
                     <div className='slider-slide' key={key}>
-                        <img src={item} alt='' />
+                        <img src={image} alt='' />
                     </div>
                 ))}
             </Slider>
