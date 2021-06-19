@@ -9,15 +9,10 @@ const Contact = () => {
         <div className='contact' id='contacto'>
             <SectionTitle
                 type='h2'
-                secondaryTitle='MAS INFO'
-                mainTitle='CONTACTANOS'
+                mainTitle='CONTACTO'
             />
             <div className='contact-info'>
                 <ul>
-                    <li className='phone'>
-                        <h4>TELÉFONO</h4>
-                        <a href='tel:+5491160095550'>(+54) 9 11 6009 5550</a>
-                    </li>
                     <li className='address'>
                         <h4>DIRECCIÓN</h4>
                         <a
@@ -28,17 +23,20 @@ const Contact = () => {
                             Paraguay 754 Piso 3 Of B - CABA
                         </a>
                     </li>
-                    <Divider />
                     <li className='email'>
                         <h4>EMAIL</h4>
                         <a href='mailto:data@as2developers.com'>
                             data@as2developers.com
                         </a>
                     </li>
+                    <li className='phone'>
+                        <h4>TELÉFONO</h4>
+                        <a href='tel:+5491155857777'>(+54) 9 11 5585 7777</a>
+                    </li>
                 </ul>
-                <Divider />
-                <SocialIcons />
             </div>
+            <Divider />
+            <SocialIcons />
         </div>
     );
 };
