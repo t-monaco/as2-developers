@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import GoogleMapsMarker from './../google-maps-marker/google-maps-marker.component';
 
 const SimpleMap = ({ lat, lng, name }) => {
-    const [center] = useState({ lat: lat, lng: lng });
+    const [center, setCenter] = useState({});
     const [zoom] = useState(14);
     const secretKey =  process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 
+    useEffect(() => {
+        setCenter({ lat, lng })
+    }, [lat, lng])
 
-    const getMapOptions = (maps) => {
+    const getMapOptions = () => {
         return {
             disableDefaultUI: true,
             mapTypeControl: true,
@@ -29,7 +32,7 @@ const SimpleMap = ({ lat, lng, name }) => {
                 bootstrapURLKeys={{
                     key: secretKey,
                 }}
-                defaultCenter={center}
+                center={center}
                 defaultZoom={zoom}
                 options={getMapOptions}
             >
