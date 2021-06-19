@@ -8,7 +8,6 @@ const About = () => {
         <div className='about' id='nosotros'>
             <SectionTitle
                 type='h2'
-                secondaryTitle='SOBRE'
                 mainTitle='NOSOTROS'
             />
             <article className='description'>
