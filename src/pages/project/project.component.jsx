@@ -32,6 +32,7 @@ const Project = () => {
                 blueprint={propertyContext.blueprint}
                 linkName={propertyContext.linkName}
                 name={propertyContext.name}
+                project_details={propertyContext.project_details}
             />
             <Contact />
         </div>
