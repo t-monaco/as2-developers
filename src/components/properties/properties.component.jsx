@@ -12,13 +12,11 @@ const Properties = () => {
         <div className='properties'>
             <SectionTitle
                 type='h2'
-                secondaryTitle='NUESTROS'
-                mainTitle="TOUCH'S"
+                mainTitle="TOUCH"
             />
             <ul className='properties-container'>
                 {propertiesContext
                     .filter((property) => property.category === 'touch')
-                    .slice(0, 4)
                     .map((property, key) => (
                         <Property
                             key={key}
