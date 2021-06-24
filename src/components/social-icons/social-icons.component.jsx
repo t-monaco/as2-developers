@@ -54,7 +54,7 @@ const SocialIcons = () => {
                     <a
                         className='icon-link'
                         target='_blank'
-                        href='https://facebook.com'
+                        href='https://suredaasociados.com'
                         rel='noopener noreferrer'
                     >
                         <ASIcon className='icon' />
