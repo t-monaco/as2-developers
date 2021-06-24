@@ -77,7 +77,7 @@ const Blueprint = ({
         <div className='blueprint'>
             <div className='blueprint-content'>
                 <div className='title-description'>
-                    <SectionTitle type='h2' mainTitle='PROJECTO' />
+                    <SectionTitle type='h2' mainTitle='PROYECTO' />
                     <p className='description'>{project_details.description}</p>
                 </div>
                 <div className='downloadable-input-container'>
@@ -88,7 +88,7 @@ const Blueprint = ({
                         target='_blank'
                         rel='noopener noreferrer'
                     >
-                        Descargar projecto
+                        Descargar proyecto
                     </a>
                     {project_details.view_360 && (
                         <a
