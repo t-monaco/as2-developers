@@ -24,7 +24,7 @@ const SocialIcons = () => {
                     <a
                         className='icon-link'
                         target='_blank'
-                        href='https://facebook.com'
+                        href='https://facebook.com/AS2-Developers-100761735603462 '
                         rel='noopener noreferrer'
                     >
                         <FacebookIcon className='icon' />
@@ -34,7 +34,7 @@ const SocialIcons = () => {
                     <a
                         className='icon-link'
                         target='_blank'
-                        href='https://facebook.com'
+                        href='https://twitter.com/home?logout=1624589080303'
                         rel='noopener noreferrer'
                     >
                         <TwitterIcon className='icon' />
