@@ -191,6 +191,12 @@ const PROPERTIES_DATA = [
                     'images/superi/blueprint/blueprint_piso_08_unidad_02_138,62m2.jpg',
                 squareMeters: 138.62,
             },
+            {
+                name: 'piso_07_unidad_01',
+                imageUrl:
+                    'images/superi/blueprint/blueprint_piso_07_unidad_01_165,00m2.jpg',
+                squareMeters: 165.00,
+            },
             // documents/superi/blueprint/superi_planos_35m2.pdf
         ],
     },
