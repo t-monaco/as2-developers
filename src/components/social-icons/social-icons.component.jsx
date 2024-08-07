@@ -14,7 +14,7 @@ const SocialIcons = () => {
                     <a
                         className='icon-link'
                         target='_blank'
-                        href='https://www.instagram.com/as2developers/'
+                        href='https://www.instagram.com/as2developers'
                         rel='noopener noreferrer'
                     >
                         <InstagramIcon className='icon' />
@@ -24,7 +24,7 @@ const SocialIcons = () => {
                     <a
                         className='icon-link'
                         target='_blank'
-                        href='https://facebook.com/AS2-Developers-100761735603462 '
+                        href='https://facebook.com/as2developers'
                         rel='noopener noreferrer'
                     >
                         <FacebookIcon className='icon' />
@@ -34,7 +34,7 @@ const SocialIcons = () => {
                     <a
                         className='icon-link'
                         target='_blank'
-                        href='https://twitter.com/home?logout=1624589080303'
+                        href='https://twitter.com/as2developers'
                         rel='noopener noreferrer'
                     >
                         <TwitterIcon className='icon' />
@@ -44,7 +44,7 @@ const SocialIcons = () => {
                     <a
                         className='icon-link'
                         target='_blank'
-                        href='https://wa.me/5491155857777'
+                        href='https://wa.me/5491128450000'
                         rel='noopener noreferrer'
                     >
                         <WhatsappIcon className='icon' />
